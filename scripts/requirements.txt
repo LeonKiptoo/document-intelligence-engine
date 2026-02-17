@@ -1,0 +1,3 @@
+Pillow
+# To enable stronger engine play, install Stockfish and ensure 'stockfish' is in PATH.
+# Example (Windows): download stockfish.exe and add folder to PATH.

@@ -1,0 +1,14 @@
+# Virtual environments
+.venv/
+scripts/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Vector / embedding stores (optional – keep if you want reproducibility)
+vector_store/
+
+# OS files
+.DS_Store
+Thumbs.db
