@@ -129,10 +129,7 @@ def get_engines():
 
 @app.on_event("startup")
 async def startup_event():
-    """Pre-load all engines when server starts."""
-    import anyio
-    await anyio.to_thread.run_sync(get_engines)
-    logger.info("Startup complete — engines pre-loaded.")
+    logger.info("DocIntel API ready.")
 
 
 # ---------------------------------------------------------------------------
