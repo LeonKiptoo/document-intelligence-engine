@@ -1,0 +1,93 @@
+PROJECT NAME: DocIntel / Cognitive Infrastructure
+
+GOAL:
+Build a professional-grade document intelligence system that becomes the grounding and memory layer of a future AI platform comparable in scale to Google/Facebook, but focused on cognitive infrastructure.
+
+PHILOSOPHY:
+Systems over hustle.
+Infrastructure over noise.
+Dignity over dependency.
+Long-term compounding.
+
+CURRENT STAGE:
+Document ingestion engine.
+
+COMPLETED:
+
+Python installed
+
+VS Code installed
+
+Git installed
+
+Virtual environment created
+
+OCR engine (Tesseract) installed
+
+PyPDF2, pytesseract, pdf2image, pillow installed
+
+Hybrid PDF ingestion script works
+
+OCR fallback works
+
+Text extraction confirmed
+
+CURRENT POSITION:
+Between Layer 1 (Ingestion) and Layer 2 (Structuring).
+
+SYSTEM ARCHITECTURE:
+
+Ingestion layer
+
+Structuring layer
+
+Grounded intelligence layer
+
+Professional output layer
+
+Interface & monetization layer
+
+SHORT TERM FINANCIAL GOAL:
+$1000/month by mid-late 2026, ideally starting around March.
+
+MONETIZATION STRATEGY:
+Private access, document processing service, later licensing.
+
+LONG TERM VISION:
+A personal intelligence platform with memory, reasoning, and agency.
+
+USER PROFILE:
+Quiet, long-term, system thinker, values dignity, avoids hustle and noise.
+DOCINTEL PROJECT — STATUS NOTE (Jan 10, 2026)
+
+Current Status:
+
+Document extraction infrastructure complete: extract_documents.py successfully extracts PDFs, DOCX, CSV, XLSX → JSON chunks.
+
+JSON outputs verified; CSV encoding issues handled (errors='ignore').
+
+Virtual environment is set up and working; all required packages installed except gensim (skipped due to Python 3.14/Cython incompatibility).
+
+Next Steps:
+
+Activate venv and test summarization script (summarize_documents.py).
+
+Upgrade summarization to context-aware, not limited to 5 sentences.
+
+Begin interactive QA on document chunks.
+
+Notes:
+
+We are laying the infrastructure for a scalable, multi-format, cross-platform document intelligence system.
+
+Goal: build tools that can eventually become a billion-dollar platform, capable of reading, understanding, and answering questions on complex documents.
+
+Keep work step-by-step, prioritize reliability and quality over speed.
+
+Reminder:
+
+Save all work (Ctrl+S) before closing VS Code.
+
+Enable AutoSave if desired.
+
+Focus on clean, maintainable scripts — we are building the foundation for something huge.

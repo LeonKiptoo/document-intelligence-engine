@@ -1,0 +1,2774 @@
+[
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 3,
+    "section": null,
+    "text": "MSc Dissertation Report"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 4,
+    "section": null,
+    "text": "\" Using Artificial Intelligence to Predict Diabetes: A Comparative Analysis of Logistic Regression, Random Forest, and Artificial Neural Network Models \""
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 5,
+    "section": null,
+    "text": "A dissertation submitted in partial fulfilment of the requirements of Sheffield Hallam University for the degree of Master of Science in [ENTER COURSE TITLE]"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 8,
+    "section": null,
+    "text": "This dissertation does NOT contain confidential material and thus  can be made available to staff and students via the library."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 10,
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 11,
+    "section": "Acknowledgements",
+    "text": "I would like to express my sincere gratitude to my supervisor, Joshua Thompson, for his guidance, constructive feedback, and academic support throughout the development of this dissertation. His expertise and encouragement were instrumental in shaping the direction of the research and refining its methodological rigor."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 12,
+    "section": "Acknowledgements",
+    "text": "I am also grateful to the Sheffield Hallam University MSc Big Data Analytics programme team for providing the academic foundation and resources necessary to undertake this research. The programme’s emphasis on applied data science and ethical research practice significantly informed the approach adopted in this study."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 13,
+    "section": "Acknowledgements",
+    "text": "Special acknowledgment is given to the creators and maintainers of the Pima Indians Diabetes Database, as well as the Kaggle data science community, for making high-quality open datasets available for research and educational purposes. Such open data initiatives play a vital role in advancing reproducible and accessible scientific research. I would like to thank my family and peers for their continued support, patience, and encouragement throughout the completion of this dissertation."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 17,
+    "section": "1. Chapter 1: Introduction",
+    "text": "1. Chapter 1: Introduction"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 18,
+    "section": "1. Chapter 1: Introduction",
+    "text": "Diabetes mellitus is a prevalent metabolic disorder that affects 422 million people globally, thereby posing challenges to global health systems."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 19,
+    "section": "1. Chapter 1: Introduction",
+    "text": "Diabetes mellitus remains one of the most prevalent and complex metabolic disorders worldwide, posing substantial challenges to global health systems and economic productivity. The World Health Organization (WHO, 2023) reported that approximately 422 million individuals live with diabetes globally, and this number continues to increase due to lifestyle changes, urbanization, and population aging. The condition, which is characterized by chronic hyperglycemia resulting from defects in insulin secretion, insulin action, or both, has severe long-term complications including cardiovascular diseases, neuropathy, and retinopathy (American Diabetes Association [ADA], 2022). The increasing prevalence of diabetes represents a growing public health burden, especially in developing regions where healthcare resources and early detection mechanisms remain limited. This backdrop has fostered a demand for innovative approaches to early diagnosis and intervention, where Artificial Intelligence (AI) pr"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 19,
+    "section": "1. Chapter 1: Introduction",
+    "text": "esents emerging and transformative potential."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 20,
+    "section": "1. Chapter 1: Introduction",
+    "text": "In recent years, artificial intelligence, particularly machine learning (ML), has been increasingly used in healthcare to facilitate predictive analysis, automate clinical workflows, and support medical decision-making. The predictive capacity of AI enables the discovery of hidden patterns within large datasets, allowing clinicians and researchers to identify patients at risk before clinical symptoms manifest (Beam & Kohane, 2018). Diabetes prediction models, built using supervised learning techniques, utilize demographic, clinical, and laboratory features to classify individuals into diabetic or non-diabetic categories. According to Contreras and Vehi (2018), such AI-based systems can enhance diagnostic accuracy, reduce human bias, and enable personalized treatment planning. Despite this potential, several challenges persist, including data quality, model interpretability, and generalization across populations (Yu et al., 2018). Therefore, it is important to examine how different AI m"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 20,
+    "section": "1. Chapter 1: Introduction",
+    "text": "odels perform on diabetes prediction tasks using real-world datasets such as those available on Kaggle."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 21,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The use of open-access datasets has become integral to contemporary computational research, enabling reproducibility and comparative experimentation among different algorithms. Kaggle, an online data science platform, hosts multiple diabetes-related datasets, including the popular Pima Indians Diabetes Database, which has been extensively used in AI research. This dataset provides diagnostic measurements such as glucose concentration, BMI, insulin levels, and age variables that have been shown to correlate with diabetes risk (Smith et al., 1988). By leveraging such datasets, this study aims to construct and evaluate three AI-based classification models Logistic Regression (LR), Random Forest (RF), and Artificial Neural Network (ANN) to determine which model achieves the highest predictive performance. Each model embodies unique theoretical assumptions and computational mechanisms that make comparative analysis both technically and academically significant."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 22,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The problem of delayed or inaccurate diagnosis of diabetes continues to affect millions of people worldwide. Traditional diagnostic methods, including fasting glucose and HbA1c testing, are effective but limited by accessibility and cost in low-resource environments (Herman et al., 2012). Moreover, they rely on episodic testing rather than continuous risk monitoring. Machine learning methods can complement traditional diagnostics by providing automated, data-driven risk assessments that could be integrated into routine health screening programs (Jain et al., 2021). However, model performance and interpretability remain significant concerns. For instance, while deep learning models such as ANNs can capture complex nonlinear relationships in the data, they often act as “black boxes,” making clinical validation challenging (Ribeiro et al., 2016). On the other hand, simpler models like Logistic Regression provide interpretable coefficients but may fail to capture subtle feature interaction"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 22,
+    "section": "1. Chapter 1: Introduction",
+    "text": "s. Therefore, this study aims to evaluate and compare multiple AI models to balance interpretability, accuracy, and generalizability in diabetes prediction."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 23,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The application of AI in diabetes prediction aligns with global healthcare priorities emphasizing early detection and preventive care. The WHO (2021) advocates for data-driven strategies to reduce the burden of non-communicable diseases (NCDs) through digital health technologies. AI-driven predictive models can be used to identify at-risk individuals for timely intervention, thus mitigating the progression of prediabetes to full-blown diabetes. Research by Shameer et al. (2018) demonstrated that AI could assist in precision medicine, enabling stratification of patients based on personalized risk factors. However, successful integration of AI tools in healthcare requires a balance between algorithmic sophistication and clinical interpretability. Many healthcare professionals remain skeptical of black-box models due to lack of transparency (Tjoa & Guan, 2020). Hence, this dissertation does not merely seek to build predictive models but also to critically evaluate their practical implicat"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 23,
+    "section": "1. Chapter 1: Introduction",
+    "text": "ions within the healthcare context."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 24,
+    "section": "1. Chapter 1: Introduction",
+    "text": "From a methodological perspective, this study adopts a quantitative, experimental research design using Python programming language within the Jupyter Notebook environment. The quantitative approach allows for measurable comparison among models, while Python provides the computational flexibility necessary for data cleaning, feature engineering, model training, and evaluation. The study’s workflow follows a structured pipeline: dataset preprocessing, model development, performance evaluation, and comparative analysis. The metrics used to assess model performance will include accuracy, precision, recall, F1-score, and the area under the receiver operating characteristic curve (AUC-ROC). These metrics collectively provide a comprehensive picture of model efficacy across different aspects of classification (Sokolova & Lapalme, 2009)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 25,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The rationale for selecting Logistic Regression, Random Forest, and Artificial Neural Network lies in their complementary characteristics. Logistic Regression, one of the earliest statistical classification methods, assumes a linear relationship between independent variables and the log-odds of the dependent variable (Hosmer et al., 2013). Despite its simplicity, it provides clear interpretability, making it suitable as a baseline model. Random Forest, on the other hand, is an ensemble learning method that aggregates multiple decision trees to improve generalization and reduce overfitting (Breiman, 2001). It is robust against noisy data and can handle feature interactions effectively. Finally, Artificial Neural Networks emulate the human brain’s structure, comprising interconnected neurons that process data through multiple layers. ANNs are capable of learning highly nonlinear patterns, making them particularly suitable for complex healthcare datasets (LeCun et al., 2015). Comparing th"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 25,
+    "section": "1. Chapter 1: Introduction",
+    "text": "ese models allows for a nuanced understanding of how algorithmic complexity influences predictive accuracy and interpretability in a clinical context."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 26,
+    "section": "1. Chapter 1: Introduction",
+    "text": "Several studies have attempted similar comparisons, although their findings vary depending on dataset and parameter choices. For example, Sisodia et al. (2017) found that Random Forest outperformed Logistic Regression and Support Vector Machine in predicting diabetes using the Pima dataset. Conversely, Khanam et al. (2020) reported superior accuracy from neural networks, suggesting that deeper architectures can capture complex patterns more effectively. However, they also noted that ANNs require careful tuning of hyperparameters and large sample sizes to avoid overfitting. The mixed outcomes from previous literature reinforce the necessity of re-evaluating model performance under different preprocessing strategies and validation frameworks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 27,
+    "section": "1. Chapter 1: Introduction",
+    "text": "Another challenge concerns the ethical and data governance aspects of AI-based medical research. Although the dataset used in this study is publicly available and anonymized, it remains crucial to adhere to ethical standards related to data privacy, informed consent, and responsible AI deployment. The General Data Protection Regulation (GDPR) emphasizes the lawful and transparent processing of data, particularly when dealing with sensitive health information (European Union, 2018). Additionally, the interpretability of AI models has ethical significance, as healthcare decisions based on opaque algorithms could undermine patient autonomy (Floridi et al., 2018). Therefore, this research will include reflections on the ethical dimensions of predictive modeling to ensure compliance with data protection and fairness principles."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 28,
+    "section": "1. Chapter 1: Introduction",
+    "text": "While the technical aspect of the study focuses on predictive performance, its broader contribution lies in understanding how AI can enhance healthcare analytics. Predictive models can be integrated into electronic health record (EHR) systems to provide real-time alerts to clinicians, potentially improving patient outcomes through early interventions (Rajkomar et al., 2019). Moreover, the findings from this study can inform policymakers about the feasibility of implementing AI tools in public health monitoring programs, particularly in developing contexts where diabetes management infrastructure is limited. However, there are limitations to generalizing results from static datasets, as real-world medical data are dynamic, heterogeneous, and often incomplete. Addressing these challenges requires continuous retraining of models with updated data to maintain performance stability (Topol, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 29,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The present study is guided by the following research questions:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 30,
+    "section": "1. Chapter 1: Introduction",
+    "text": "How effectively can artificial intelligence models predict diabetes using clinical and demographic data from the Kaggle dataset?"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 31,
+    "section": "1. Chapter 1: Introduction",
+    "text": "Which AI model; Logistic Regression, Random Forest, or Artificial Neural Network, achieves the highest predictive performance in terms of accuracy and interpretability?"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 32,
+    "section": "1. Chapter 1: Introduction",
+    "text": "What are the limitations and ethical considerations associated with the use of AI in diabetes prediction?"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 33,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The research objectives derived from these questions include:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 34,
+    "section": "1. Chapter 1: Introduction",
+    "text": "To preprocess and explore the Kaggle diabetes dataset to identify significant predictive features."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 35,
+    "section": "1. Chapter 1: Introduction",
+    "text": "To train and evaluate Logistic Regression, Random Forest, and ANN models using consistent experimental conditions."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 36,
+    "section": "1. Chapter 1: Introduction",
+    "text": "To compare the performance of these models based on statistical and graphical evaluation metrics."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 37,
+    "section": "1. Chapter 1: Introduction",
+    "text": "To interpret results in light of existing research and discuss implications for healthcare applications."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 38,
+    "section": "1. Chapter 1: Introduction",
+    "text": "The structure of this dissertation follows six chapters. Chapter One introduces the research background, rationale, aims, objectives, and questions. Chapter Two presents a comprehensive literature review on diabetes prediction and AI methodologies, highlighting theoretical foundations and knowledge gaps. Chapter Three outlines the research methodology, including data preparation, algorithm selection, and ethical compliance. Chapter Four details data analysis procedures and results, with visualizations and statistical evaluations. Chapter Five discusses findings in relation to prior research, identifying key insights, implications, and limitations. Finally, Chapter Six concludes the study by summarizing main contributions, drawing conclusions, and suggesting directions for future research."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 39,
+    "section": "1. Chapter 1: Introduction",
+    "text": "In summary, the increasing prevalence of diabetes calls for innovative diagnostic strategies that combine accuracy, affordability, and scalability. Artificial intelligence offers a viable avenue for addressing these challenges through predictive modeling. This dissertation seeks to contribute to the field by comparing three AI models, Logistic Regression, Random Forest, and Artificial Neural Network using a publicly available dataset, with the aim of identifying the most effective approach for diabetes prediction. Through empirical analysis and critical discussion, this research aspires to bridge the gap between algorithmic performance and clinical applicability, advancing both academic understanding and practical implementation of AI in healthcare."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 42,
+    "section": "2. Chapter 2: Literature Review",
+    "text": "2. Chapter 2: Literature Review"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 43,
+    "section": "2. Chapter 2: Literature Review",
+    "text": "The application of artificial intelligence (AI) in healthcare has grown substantially over the past decade, reshaping the possibilities of disease prediction, diagnosis, and management. Diabetes, a chronic metabolic disease, has been one of the most widely studied conditions in predictive analytics due to its prevalence and preventable nature. The literature surrounding diabetes prediction reveals a rich body of work combining data-driven methods, clinical knowledge, and computational modeling. This chapter critically reviews previous studies on diabetes prediction using AI techniques, focusing on how machine learning (ML) algorithms such as Logistic Regression (LR), Random Forest (RF), and Artificial Neural Networks (ANN) have been applied. It also explores issues surrounding data preprocessing, class imbalance, model interpretability, and the ethical implications of using AI in medical decision-making."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 45,
+    "section": "2.1 Overview of Diabetes Prediction Research",
+    "text": "2.1 Overview of Diabetes Prediction Research"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 46,
+    "section": "2.1 Overview of Diabetes Prediction Research",
+    "text": "Diabetes mellitus has long been a subject of epidemiological and clinical investigation. However, with the advent of computational methods, predictive analytics has gained momentum as a viable approach to complement clinical diagnosis. Traditional diagnostic tests, such as fasting plasma glucose and glycated hemoglobin (HbA1c) levels, though effective, require clinical infrastructure and laboratory resources that are not always readily available in resource-limited settings (Herman et al., 2012). Consequently, researchers have turned to data-driven predictive modeling as an alternative strategy to identify high-risk individuals early."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 47,
+    "section": "2.1 Overview of Diabetes Prediction Research",
+    "text": "According to Patel et al. (2020), diabetes prediction using AI relies on the identification of patterns in patient data demographic, physiological, and lifestyle factors to assess the probability of developing diabetes. Early research in this field primarily focused on applying statistical models such as logistic regression to small, structured datasets. Over time, advances in computing power and availability of open-access datasets like the Pima Indians Diabetes Database have enabled the development of more complex machine learning and deep learning models (Smith et al., 1988)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 48,
+    "section": "2.1 Overview of Diabetes Prediction Research",
+    "text": "A systematic review by Zahid et al. (2021) summarized that the majority of machine learning approaches to diabetes prediction fall under supervised learning frameworks, where algorithms are trained on labeled data to classify individuals as diabetic or non-diabetic. Their findings revealed that ensemble methods and neural networks tend to outperform traditional algorithms in terms of accuracy, though issues of transparency and overfitting persist. The growing number of studies indicates the increasing confidence in AI as a supplementary diagnostic tool, but also the ongoing concern about its clinical reliability (Yu et al., 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 49,
+    "section": "2.1 Overview of Diabetes Prediction Research",
+    "text": "It is also worth noting that diabetes prediction is not purely a technical problem but a multidimensional one involving clinical reasoning, data ethics, and social acceptability. The predictive performance of an AI model does not necessarily translate into real-world efficacy, especially if the model is not interpretable by clinicians (Tjoa & Guan, 2020). Thus, an in-depth understanding of algorithmic design and contextual adaptation remains essential to ensure that predictive models serve practical healthcare purposes."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 51,
+    "section": "2.2 Artificial Intelligence and Machine Learning in Healthcare",
+    "text": "2.2 Artificial Intelligence and Machine Learning in Healthcare"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 52,
+    "section": "2.2 Artificial Intelligence and Machine Learning in Healthcare",
+    "text": "AI has become a cornerstone in the evolution of digital health technologies, with machine learning as its primary enabler. In healthcare, ML is used for diagnostic classification, disease progression prediction, treatment optimization, and medical imaging interpretation (Topol, 2019). The integration of AI into healthcare analytics allows for more precise predictions compared to traditional statistical methods because of its ability to model nonlinear relationships and handle high-dimensional data (Beam & Kohane, 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 53,
+    "section": "2.2 Artificial Intelligence and Machine Learning in Healthcare",
+    "text": "Machine learning methods are broadly categorized into supervised, unsupervised, and reinforcement learning. For disease prediction tasks like diabetes classification, supervised learning dominates the literature because it allows the model to learn from labeled data (Jain et al., 2021). Logistic Regression, Support Vector Machines (SVM), Decision Trees, Random Forests, Gradient Boosting, and Neural Networks are among the most used algorithms. Each algorithm has its advantages and limitations depending on dataset characteristics and problem complexity (Shailaja et al., 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 54,
+    "section": "2.2 Artificial Intelligence and Machine Learning in Healthcare",
+    "text": "One of the critical advantages of ML in healthcare is its potential to uncover hidden relationships among clinical variables that may not be immediately apparent to physicians. For example, Fawagreh et al. (2014) found that ensemble learning techniques such as Random Forests could capture complex feature interactions between glucose levels, BMI, and insulin resistance that correlate strongly with diabetes onset. However, AI models are not substitutes for clinical judgment; rather, they are decision-support tools that can aid healthcare professionals in identifying patterns and anomalies."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 55,
+    "section": "2.2 Artificial Intelligence and Machine Learning in Healthcare",
+    "text": "Despite the growing enthusiasm, implementation barriers remain significant. Challenges include poor data quality, limited interpretability, algorithmic bias, and difficulties integrating AI systems with existing clinical workflows (Rajkomar et al., 2019). Moreover, while AI promises efficiency, it also raises ethical concerns about accountability and patient privacy (Floridi et al., 2018). In low-resource environments, the deployment of AI tools is further constrained by limited digital infrastructure and inconsistent data governance frameworks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 57,
+    "section": "2.3 Common Algorithms in Diabetes Prediction",
+    "text": "2.3 Common Algorithms in Diabetes Prediction"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 58,
+    "section": "2.3 Common Algorithms in Diabetes Prediction",
+    "text": "The effectiveness of AI in diabetes prediction largely depends on the choice of algorithm and its alignment with the characteristics of the dataset. Three models, Logistic Regression, Random Forest, and Artificial Neural Networks, are particularly relevant to this study because of their distinct theoretical foundations and widespread application in medical prediction research."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 59,
+    "section": "Logistic Regression",
+    "text": "Logistic Regression"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 60,
+    "section": "Logistic Regression",
+    "text": "Logistic Regression is one of the oldest and most interpretable classification models. It predicts the probability of a binary outcome (such as diabetic vs. non-diabetic) based on a set of independent variables. Its mathematical simplicity makes it attractive for clinical use, as coefficients can be interpreted as odds ratios (Hosmer et al., 2013). In diabetes prediction, Logistic Regression has been used extensively as a baseline model to evaluate the performance of more advanced algorithms. For instance, Sisodia et al. (2017) applied Logistic Regression to the Pima Indians dataset and achieved moderate accuracy, suggesting that linear relationships between features were insufficient to capture the full complexity of the disease."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 61,
+    "section": "Logistic Regression",
+    "text": "However, Logistic Regression has limitations when the relationship between predictors and the outcome is nonlinear or when multicollinearity exists among independent variables (Kuhn & Johnson, 2013). Researchers have attempted to address these limitations using regularization techniques such as Lasso and Ridge Regression, which can reduce overfitting and improve generalization (Zou & Hastie, 2005). Nonetheless, even with these enhancements, Logistic Regression may struggle with high-dimensional data where feature interactions are complex and non-additive, which is often the case in biomedical datasets."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 62,
+    "section": "Random Forest",
+    "text": "Random Forest"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 63,
+    "section": "Random Forest",
+    "text": "Random Forest (RF) is an ensemble learning algorithm that constructs multiple decision trees during training and outputs the mode of the predictions from individual trees. This ensemble approach helps reduce overfitting and improve predictive accuracy (Breiman, 2001). RF is particularly effective in handling nonlinear relationships and high-dimensional datasets with mixed feature types. Its ability to rank feature importance also provides interpretability, which is critical in healthcare (Fawagreh et al., 2014)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 64,
+    "section": "Random Forest",
+    "text": "In a comparative study, Khanam et al. (2020) found that Random Forest achieved higher accuracy (approximately 86%) than Logistic Regression and SVM on the same diabetes dataset, suggesting that ensemble methods better capture complex dependencies between clinical variables. Furthermore, Jindal et al. (2018) noted that Random Forest performs well even with missing or noisy data, making it robust for real-world healthcare applications. However, despite its advantages, Random Forest models can be computationally intensive and less transparent than simpler models, as they rely on hundreds or thousands of decision trees whose combined logic can be difficult to interpret."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 65,
+    "section": "Artificial Neural Networks",
+    "text": "Artificial Neural Networks"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 66,
+    "section": "Artificial Neural Networks",
+    "text": "Artificial Neural Networks (ANNs) have emerged as one of the most powerful predictive modeling tools in medical informatics. Modeled after the structure of the human brain, ANNs consist of interconnected neurons organized into input, hidden, and output layers (LeCun et al., 2015). The strength of ANNs lies in their ability to learn complex, nonlinear relationships from data, allowing them to outperform traditional algorithms in many prediction tasks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 67,
+    "section": "Artificial Neural Networks",
+    "text": "For diabetes prediction, several studies have demonstrated the superiority of ANNs under certain conditions. For example, Aslam et al. (2021) reported that an ANN model achieved an accuracy of 90% on the Pima Indians dataset after hyperparameter tuning, outperforming logistic and tree-based methods. Similarly, Liang et al. (2019) used deep neural networks with dropout regularization to predict diabetes onset, obtaining high accuracy and stability across multiple datasets. However, the “black-box” nature of neural networks remains a significant barrier to their adoption in clinical practice (Ribeiro et al., 2016). Clinicians often require transparency in model decision-making to ensure accountability, which ANNs typically lack due to their complex internal representations."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 68,
+    "section": "Artificial Neural Networks",
+    "text": "The interpretability challenge has prompted the development of explainable AI (XAI) techniques such as Local Interpretable Model-Agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which aim to make neural network predictions more transparent (Lundberg & Lee, 2017). Nonetheless, these interpretability tools are still developing and are not yet standard in medical AI pipelines."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 70,
+    "section": "2.4 Data Preprocessing and Feature Engineering",
+    "text": "2.4 Data Preprocessing and Feature Engineering"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 71,
+    "section": "2.4 Data Preprocessing and Feature Engineering",
+    "text": "Data preprocessing is a crucial step in predictive modeling because the quality of input data directly influences model performance. In medical datasets, missing values, inconsistent units, and class imbalance are frequent issues that must be addressed before model training (Han et al., 2012). Feature scaling, normalization, and encoding categorical variables are standard preprocessing steps to ensure numerical stability and comparability across features."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 72,
+    "section": "2.4 Data Preprocessing and Feature Engineering",
+    "text": "Feature engineering plays a vital role in improving model accuracy by selecting or creating features that best represent the underlying patterns in the data. For instance, adding derived variables such as body mass index (BMI) categories or age groups can improve classification performance (Liang et al., 2019). Studies by Jindal et al. (2018) emphasized that careful feature selection can significantly improve interpretability without compromising predictive power."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 73,
+    "section": "2.4 Data Preprocessing and Feature Engineering",
+    "text": "Handling class imbalance where non-diabetic cases outnumber diabetic cases is another common challenge. Unbalanced datasets can lead to biased models that favor the majority class. Techniques such as Synthetic Minority Over-sampling Technique (SMOTE) have been widely used to address this issue (Chawla et al., 2002). SMOTE generates synthetic samples of the minority class, improving model sensitivity to diabetic cases. However, oversampling can sometimes lead to overfitting if not carefully applied."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 75,
+    "section": "2.5 Challenges and Limitations in AI-based Diabetes Prediction",
+    "text": "2.5 Challenges and Limitations in AI-based Diabetes Prediction"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 76,
+    "section": "2.5 Challenges and Limitations in AI-based Diabetes Prediction",
+    "text": "Although machine learning has demonstrated strong predictive potential, several limitations hinder its clinical translation. One major issue is overfitting, which occurs when models learn noise or irrelevant patterns from the training data rather than generalizable trends. Overfitting is particularly problematic with small datasets like the Pima Indians dataset, where the number of features may approach the number of samples (Kuhn & Johnson, 2013)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 77,
+    "section": "2.5 Challenges and Limitations in AI-based Diabetes Prediction",
+    "text": "Another persistent issue is interpretability. While models such as Logistic Regression offer transparency, more complex models like ANNs and ensemble methods often lack clear explanations for their decisions. This black-box nature raises ethical and legal concerns, particularly when AI systems are used to support or replace human judgment in medical contexts (Floridi et al., 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 78,
+    "section": "2.5 Challenges and Limitations in AI-based Diabetes Prediction",
+    "text": "Data privacy and security also remain pressing concerns. The increasing use of patient data in machine learning raises questions about informed consent, anonymization, and potential misuse of sensitive information (European Union, 2018). Moreover, biases in data collection such as underrepresentation of certain demographic groups can lead to inequitable outcomes. Buolamwini and Gebru (2018) showed that AI systems trained on biased datasets could produce discriminatory predictions, a problem that may equally affect medical AI models if not carefully mitigated."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 79,
+    "section": "2.5 Challenges and Limitations in AI-based Diabetes Prediction",
+    "text": "Furthermore, reproducibility issues are common due to the lack of standardized methodologies. Studies often use different preprocessing methods, evaluation metrics, and validation techniques, making direct comparisons difficult (Rajkomar et al., 2019). There is also a tendency in academic research to prioritize model accuracy over clinical usability, resulting in models that perform well in laboratory settings but poorly in real-world applications (Topol, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 81,
+    "section": "2.6 Gaps in Existing Research",
+    "text": "2.6 Gaps in Existing Research"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 82,
+    "section": "2.6 Gaps in Existing Research",
+    "text": "Although substantial progress has been made, several gaps remain in the literature. First, there is limited consensus on the best-performing AI model for diabetes prediction, as reported performance varies widely across studies depending on data quality and preprocessing methods (Zahid et al., 2021). Second, interpretability remains an unresolved challenge. While explainable AI is a growing field, it has not yet been effectively integrated into most healthcare prediction pipelines."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 83,
+    "section": "2.6 Gaps in Existing Research",
+    "text": "Another gap involves the contextual adaptation of AI models to diverse populations. Most publicly available datasets are derived from specific ethnic or geographic groups, limiting generalizability. For example, the Pima Indians dataset represents a Native American population, meaning that models trained on it may not perform equivalently in African or Asian populations (Patel et al., 2020). Additionally, many studies focus primarily on technical metrics such as accuracy, while neglecting socio-ethical implications of deploying AI in real-world healthcare systems."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 84,
+    "section": "2.6 Gaps in Existing Research",
+    "text": "Finally, few studies have explored comparative analyses of multiple algorithms under consistent experimental conditions using standardized metrics. Such comparisons are crucial to identify trade-offs between interpretability, computational cost, and predictive performance. Addressing these gaps can provide a more holistic understanding of AI’s role in diabetes prediction and its potential integration into clinical practice."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 86,
+    "section": "2.7 Conceptual Framework",
+    "text": "2.7 Conceptual Framework"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 87,
+    "section": "2.7 Conceptual Framework",
+    "text": "The conceptual framework guiding this study is grounded in comparative algorithmic analysis. The framework posits that predictive performance and interpretability are interdependent dimensions influencing the practical utility of AI models in healthcare. The process begins with data acquisition from the Kaggle diabetes dataset, followed by preprocessing steps such as cleaning, normalization, and feature selection. Subsequently, three models, Logistic Regression, Random Forest, and Artificial Neural Network, are developed and trained on the same dataset."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 88,
+    "section": "2.7 Conceptual Framework",
+    "text": "Each model’s performance will be evaluated using metrics including accuracy, precision, recall, F1-score, and AUC-ROC. The results will be compared to determine the most effective and interpretable model. Additionally, qualitative assessment of model transparency and computational efficiency will be incorporated to ensure that the chosen model aligns with real-world clinical needs. The framework integrates both technical and ethical considerations, recognizing that the most accurate model is not necessarily the most suitable for healthcare deployment."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 91,
+    "section": "3. Chapter 3: Research Methodology",
+    "text": "3. Chapter 3: Research Methodology"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 92,
+    "section": "3. Chapter 3: Research Methodology",
+    "text": "This chapter presents the research methodology adopted to investigate the effectiveness of artificial intelligence techniques in predicting diabetes. The methodology provides a structured framework that outlines how the research objectives are achieved, detailing the research philosophy, design, data source, preprocessing steps, model development, evaluation metrics, and ethical considerations. The approach taken aligns with a positivist paradigm, emphasizing empirical measurement and reproducibility of results. The chapter also discusses the rationale for selecting specific models and tools, ensuring that the overall process is both scientifically rigorous and aligned with best practices in data science and healthcare research."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 94,
+    "section": "3.1 Research Philosophy and Approach",
+    "text": "3.1 Research Philosophy and Approach"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 95,
+    "section": "3.1 Research Philosophy and Approach",
+    "text": "The philosophical foundation of this study is grounded in positivism, which emphasizes objectivity, quantification, and empirical evidence (Creswell & Creswell, 2018). Under the positivist worldview, knowledge is derived from observable and measurable phenomena, making it suitable for studies involving numerical data and computational modeling. In this research, the application of artificial intelligence (AI) and machine learning (ML) to predict diabetes outcomes relies heavily on quantifiable data and statistical inference rather than subjective interpretation."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 96,
+    "section": "3.1 Research Philosophy and Approach",
+    "text": "The study adopts a quantitative approach, as it involves numerical analysis of a dataset and the comparison of model performance metrics. Quantitative methods are appropriate for identifying patterns in large datasets and for testing hypotheses concerning predictive accuracy (Saunders et al., 2019). The dataset obtained from Kaggle provides standardized attributes that can be statistically analyzed to determine relationships between independent variables such as glucose levels, BMI, and age, and the dependent variable representing diabetes diagnosis."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 97,
+    "section": "3.1 Research Philosophy and Approach",
+    "text": "While qualitative approaches could provide insights into patient behavior or clinical perceptions of AI adoption, they are outside the scope of this investigation. The primary focus is to measure and compare predictive performance among models, adhering to objectivity and replicability, which are central tenets of positivism."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 99,
+    "section": "3.2 Research Design",
+    "text": "3.2 Research Design"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 100,
+    "section": "3.2 Research Design",
+    "text": "The research follows an experimental and comparative design, which involves implementing multiple machine learning algorithms and comparing their predictive performance. Experimental designs are useful when researchers seek to understand how changes in algorithmic parameters or data transformations affect model outcomes (Robson & McCartan, 2016). The comparative aspect of the study allows for the evaluation of three distinct machine learning models, Logistic Regression (LR), Random Forest (RF), and Artificial Neural Network (ANN) to determine which performs best on the diabetes dataset."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 101,
+    "section": "3.2 Research Design",
+    "text": "Each model represents a different computational philosophy. Logistic Regression provides interpretability through a linear probabilistic framework, Random Forest introduces robustness through ensemble learning, and ANN captures nonlinear patterns through deep hierarchical learning. By comparing these approaches under identical experimental conditions, the study aims to produce reliable evidence about their respective effectiveness."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 102,
+    "section": "3.2 Research Design",
+    "text": "A key element of the experimental design involves cross-validation, a resampling procedure used to evaluate the model on unseen data. K-fold cross-validation ensures that model performance is not dependent on a single data split, enhancing the reliability of the results (Kuhn & Johnson, 2013)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 103,
+    "section": "3.2 Research Design",
+    "text": "However, it is acknowledged that this design may introduce some computational limitations. Deep learning models, such as ANN, typically require more data and time to train, whereas simpler models like Logistic Regression train faster but may underfit complex data. Thus, a trade-off exists between model interpretability and accuracy, which forms an essential part of the comparative analysis."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 105,
+    "section": "3.3 Dataset Description",
+    "text": "3.3 Dataset Description"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 106,
+    "section": "3.3 Dataset Description",
+    "text": "The study utilizes the Kaggle Pima Indians Diabetes Database, one of the most cited public datasets for diabetes prediction research (Smith et al., 1988). This dataset, originally collected by the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), includes diagnostic measurements from 768 female patients of Pima Indian heritage aged 21 years and older. It is a binary classification dataset, where the target variable indicates whether an individual shows signs of diabetes based on World Health Organization criteria."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 107,
+    "section": "3.3 Dataset Description",
+    "text": "The dataset contains eight independent variables, representing clinically relevant measurements:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 108,
+    "section": "3.3 Dataset Description",
+    "text": "Pregnancies – Number of times pregnant."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 109,
+    "section": "3.3 Dataset Description",
+    "text": "Glucose – Plasma glucose concentration after 2 hours in an oral glucose tolerance test."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 110,
+    "section": "3.3 Dataset Description",
+    "text": "BloodPressure – Diastolic blood pressure (mm Hg)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 111,
+    "section": "3.3 Dataset Description",
+    "text": "SkinThickness – Triceps skinfold thickness (mm)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 112,
+    "section": "3.3 Dataset Description",
+    "text": "Insulin – Serum insulin level (mu U/ml)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 113,
+    "section": "3.3 Dataset Description",
+    "text": "BMI – Body mass index (weight in kg/(height in m)^2)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 114,
+    "section": "3.3 Dataset Description",
+    "text": "DiabetesPedigreeFunction – Genetic risk measure based on family history."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 115,
+    "section": "3.3 Dataset Description",
+    "text": "Age – Age of the patient (years)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 116,
+    "section": "3.3 Dataset Description",
+    "text": "The dependent variable, Outcome, takes the value 1 for diabetic and 0 for non-diabetic cases."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 117,
+    "section": "3.3 Dataset Description",
+    "text": "While the dataset is widely used, it presents several limitations that require careful preprocessing. For instance, certain variables, such as insulin and skin thickness, contain zero values that may indicate missing data rather than valid observations (Kahn et al., 1991). Consequently, appropriate data cleaning and normalization procedures were implemented to improve model performance and ensure valid statistical analysis."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 119,
+    "section": "3.4 Data Preprocessing",
+    "text": "3.4 Data Preprocessing"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 120,
+    "section": "3.4 Data Preprocessing",
+    "text": "Data preprocessing is a crucial step in the machine learning pipeline because poor-quality data often leads to inaccurate predictions. The preprocessing steps adopted in this study include data cleaning, handling missing values, feature scaling, encoding, and data partitioning."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 121,
+    "section": "3.4.1 Data Cleaning and Missing Values",
+    "text": "3.4.1 Data Cleaning and Missing Values"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 122,
+    "section": "3.4.1 Data Cleaning and Missing Values",
+    "text": "In the Kaggle diabetes dataset, zero values for glucose, blood pressure, skin thickness, BMI, and insulin are physiologically unrealistic. These instances were treated as missing values. The mean imputation method was used to replace these zeros with the mean of the corresponding attribute, a commonly applied strategy in medical prediction tasks (Han et al., 2012). Although more advanced imputation techniques, such as K-nearest neighbors or multiple imputation, can yield better estimates, mean substitution was chosen for computational simplicity and consistency."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 123,
+    "section": "3.4.2 Feature Scaling",
+    "text": "3.4.2 Feature Scaling"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 124,
+    "section": "3.4.2 Feature Scaling",
+    "text": "Since algorithms like Logistic Regression and Artificial Neural Networks are sensitive to the magnitude of input variables, Min-Max normalization was applied to scale all features between 0 and 1. Scaling ensures that no single feature dominates the model due to differing units of measurement (Jain et al., 2021). Random Forest, in contrast, is relatively insensitive to scaling, but for consistency, normalization was applied across all models."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 125,
+    "section": "3.4.3 Encoding and Splitting",
+    "text": "3.4.3 Encoding and Splitting"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 126,
+    "section": "3.4.3 Encoding and Splitting",
+    "text": "The target variable was already binary and did not require additional encoding. The dataset was then divided into training (80%) and testing (20%) sets to evaluate model generalization performance. Stratified sampling was used to maintain the same proportion of diabetic and non-diabetic cases in both subsets, which prevents bias during model evaluation (Kuhn & Johnson, 2013)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 127,
+    "section": "3.4.4 Addressing Class Imbalance",
+    "text": "3.4.4 Addressing Class Imbalance"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 128,
+    "section": "3.4.4 Addressing Class Imbalance",
+    "text": "Although the Pima dataset has a moderately balanced class distribution (approximately 65% non-diabetic and 35% diabetic), Synthetic Minority Oversampling Technique (SMOTE) was tested to ensure fair learning between classes (Chawla et al., 2002). However, final experimentation revealed minimal improvement using SMOTE; hence, the models were trained on the original data distribution to avoid artificial inflation of minority samples."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 130,
+    "section": "3.5 Mo\tdel Development",
+    "text": "3.5 Mo\tdel Development"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 131,
+    "section": "3.5 Mo\tdel Development",
+    "text": "The study employed three supervised machine learning models: Logistic Regression, Random Forest, and Artificial Neural Network. Each model was implemented in Python using libraries such as Scikit-learn, TensorFlow, and Keras within the Jupyter Notebook environment."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 132,
+    "section": "3.5.1 Logistic Regression (LR)",
+    "text": "3.5.1 Logistic Regression (LR)"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 133,
+    "section": "3.5.1 Logistic Regression (LR)",
+    "text": "Logistic Regression served as the baseline model. It uses a sigmoid activation function to map inputs into a probability between 0 and 1 (Hosmer et al., 2013). Model coefficients were estimated using maximum likelihood estimation. The hyperparameters adjusted included the regularization type (L2 penalty) and the inverse regularization strength (C)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 134,
+    "section": "3.5.1 Logistic Regression (LR)",
+    "text": "The interpretability of Logistic Regression makes it suitable for identifying which variables contribute most significantly to diabetes risk. For instance, glucose and BMI typically show positive coefficients, indicating a direct relationship with diabetes likelihood (Sisodia et al., 2017)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 135,
+    "section": "3.5.2 Random Forest (RF)",
+    "text": "3.5.2 Random Forest (RF)"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 136,
+    "section": "3.5.2 Random Forest (RF)",
+    "text": "The Random Forest algorithm builds multiple decision trees on different subsets of the data and aggregates their predictions. This ensemble approach reduces overfitting and enhances robustness (Breiman, 2001). The key hyperparameters tuned include the number of trees (n_estimators), maximum tree depth, and minimum samples per leaf."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 137,
+    "section": "3.5.2 Random Forest (RF)",
+    "text": "Feature importance analysis was conducted to identify which variables contributed most to the prediction. Consistent with prior research, glucose, BMI, and age emerged as the most influential features (Khanam et al., 2020)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 138,
+    "section": "3.5.3 Artificial Neural Network (ANN)",
+    "text": "3.5.3 Artificial Neural Network (ANN)"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 139,
+    "section": "3.5.3 Artificial Neural Network (ANN)",
+    "text": "The ANN model was constructed using the Keras Sequential API with TensorFlow backend. The network comprised one input layer with eight neurons corresponding to the features, two hidden layers with ReLU activation, and one output layer with a sigmoid activation to output a probability between 0 and 1. The model was trained using the binary cross-entropy loss function and optimized using the Adam optimizer."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 140,
+    "section": "3.5.3 Artificial Neural Network (ANN)",
+    "text": "The ANN’s hyperparameters, including the learning rate, number of epochs, and batch size, were tuned using grid search. Early stopping was applied to prevent overfitting, which occurs when the model memorizes training data but performs poorly on unseen data (LeCun et al., 2015)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 142,
+    "section": "3.6 Evaluation Metrics",
+    "text": "3.6 Evaluation Metrics"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 143,
+    "section": "3.6 Evaluation Metrics",
+    "text": "To assess model performance comprehensively, several evaluation metrics were used. These include accuracy, precision, recall, F1-score, and the Area Under the Receiver Operating Characteristic Curve (AUC-ROC)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 144,
+    "section": "3.6 Evaluation Metrics",
+    "text": "Accuracy measures the proportion of correct predictions out of total cases. While intuitive, it can be misleading if the dataset is imbalanced (Sokolova & Lapalme, 2009)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 145,
+    "section": "3.6 Evaluation Metrics",
+    "text": "Precision quantifies how many of the predicted diabetic cases are actually correct, which is crucial in minimizing false positives."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 146,
+    "section": "3.6 Evaluation Metrics",
+    "text": "Recall (Sensitivity) measures how well the model identifies true diabetic cases, reducing false negatives that could have serious clinical consequences."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 147,
+    "section": "3.6 Evaluation Metrics",
+    "text": "F1-score is the harmonic mean of precision and recall, providing a balanced measure of model effectiveness."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 148,
+    "section": "3.6 Evaluation Metrics",
+    "text": "AUC-ROC evaluates model discrimination ability across all threshold values, with higher values indicating better separation between diabetic and non-diabetic classes (Bradley, 1997)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 149,
+    "section": "3.6 Evaluation Metrics",
+    "text": "Cross-validation was performed to ensure that results were not dependent on a single data split. The mean and standard deviation of accuracy across folds were reported to measure model stability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 151,
+    "section": "3.7 Tools and Libraries",
+    "text": "3.7 Tools and Libraries"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 152,
+    "section": "3.7 Tools and Libraries",
+    "text": "All analyses were conducted using Python 3.11 within Jupyter Notebook, an interactive computational environment commonly used for data science research. Key libraries included:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 153,
+    "section": "3.7 Tools and Libraries",
+    "text": "Pandas for data manipulation and cleaning."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 154,
+    "section": "3.7 Tools and Libraries",
+    "text": "NumPy for numerical computation."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 155,
+    "section": "3.7 Tools and Libraries",
+    "text": "Matplotlib and Seaborn for visualization."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 156,
+    "section": "3.7 Tools and Libraries",
+    "text": "Scikit-learn for implementing ML algorithms and evaluation metrics."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 157,
+    "section": "3.7 Tools and Libraries",
+    "text": "TensorFlow and Keras for neural network development."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 158,
+    "section": "3.7 Tools and Libraries",
+    "text": "Python was selected because of its open-source nature, vast ecosystem of machine learning libraries, and widespread acceptance in academic research (Van Rossum & Drake, 2009)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 160,
+    "section": "3.8 Ethical Considerations",
+    "text": "3.8 Ethical Considerations"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 161,
+    "section": "3.8 Ethical Considerations",
+    "text": "Although this study uses a publicly available Kaggle dataset with anonymized patient data, ethical considerations remain critical. The research adhered to the principles of the General Data Protection Regulation (GDPR) concerning data handling, storage, and dissemination (European Union, 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 162,
+    "section": "3.8 Ethical Considerations",
+    "text": "No direct human participants were involved, eliminating the need for individual consent. However, secondary data usage requires responsible handling to avoid privacy breaches. The dataset does not contain identifiable information, and all analyses were conducted locally without cloud storage to ensure data security."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 163,
+    "section": "3.8 Ethical Considerations",
+    "text": "Moreover, fairness and bias in AI are ethical priorities. Since the dataset represents a single ethnic group, the generalizability of findings to other populations is limited. According to Floridi et al. (2018), ethical AI research must acknowledge such biases to prevent inequitable healthcare outcomes. Therefore, the study’s conclusions are contextualized to the Pima Indian population while recognizing the need for future validation on diverse datasets."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 165,
+    "section": "3.9 Limitations of the Methodology",
+    "text": "3.9 Limitations of the Methodology"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 166,
+    "section": "3.9 Limitations of the Methodology",
+    "text": "Several methodological limitations are acknowledged. First, the relatively small sample size (768 observations) may limit the generalization of results, particularly for complex models like ANNs, which typically require large datasets (LeCun et al., 2015). Second, the imputation of missing values using mean substitution can introduce bias, as it does not account for potential interactions between variables. Third, the dataset’s demographic homogeneity restricts applicability to broader populations, and model performance may vary across different ethnic or socioeconomic groups (Patel et al., 2020)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 167,
+    "section": "3.9 Limitations of the Methodology",
+    "text": "Another limitation involves the computational simplicity of the ANN architecture. More sophisticated architectures such as convolutional or recurrent neural networks could yield improved performance but were not explored due to computational constraints. Lastly, the use of a single dataset prevents external validation, which would strengthen confidence in the models’ generalizability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 169,
+    "section": "3.10 Summary",
+    "text": "3.10 Summary"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 170,
+    "section": "3.10 Summary",
+    "text": "In summary, this chapter has detailed the methodological framework used to investigate diabetes prediction using AI techniques. Grounded in positivist philosophy, the study employed a quantitative, experimental design to compare Logistic Regression, Random Forest, and Artificial Neural Network models using the Kaggle diabetes dataset. Data preprocessing included cleaning, imputation, normalization, and stratified data splitting. Evaluation metrics such as accuracy, recall, precision, and AUC-ROC were used to ensure a comprehensive assessment of model performance."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 171,
+    "section": "3.10 Summary",
+    "text": "The methodology emphasizes transparency, reproducibility, and ethical integrity, recognizing both the technical and social dimensions of AI in healthcare. The next chapter presents the implementation and analysis of results, offering a comparative evaluation of model performance and interpretability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 172,
+    "section": "4. Findings and Results",
+    "text": "4. Findings and Results"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 173,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "4.1 Overview of Experimental Setup"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 174,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "The primary aim of this study was to evaluate the effectiveness of multiple artificial intelligence models in predicting the likelihood of diabetes using a secondary health dataset. The dataset comprised 768 patient records, including 500 non-diabetic and 268 diabetic cases. Key features included clinical measurements such as fasting glucose levels, body mass index (BMI), blood pressure, insulin levels, age, and family medical history. The binary outcome variable indicated the presence or absence of diabetes, coded as 1 for diabetic and 0 for non-diabetic."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 175,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "Three distinct predictive models were implemented for comparative evaluation: logistic regression, random forest classifier, and artificial neural network. These models were chosen to reflect varying levels of complexity, interpretability, and predictive power. Logistic regression served as a baseline, providing a simple, interpretable model. The random forest model represented a more complex, ensemble-based approach capable of capturing non-linear relationships. The neural network model, with multiple hidden layers, provided a high-complexity benchmark intended to evaluate potential gains from advanced architectures."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 176,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "The dataset was split into training and testing subsets using a stratified 80:20 split, ensuring proportional representation of diabetic and non-diabetic cases in both sets. Cross-validation was employed during model training to enhance stability and reduce variance in performance estimates. Model evaluation metrics included accuracy, precision, recall, F1-score, and area under the ROC curve (AUC). These metrics were selected to capture different aspects of model performance, particularly the balance between correctly identifying diabetic cases (sensitivity) and avoiding false positives (specificity)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 177,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "All preprocessing steps described in Section 3 were applied prior to model training, including handling of missing values, standardisation of numerical features, and feature selection based on clinical relevance. The methodological approach ensured reproducibility, consistency across models, and alignment with established best practices in machine learning research within healthcare contexts (Kuhn and Johnson, 2013; Topol, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 178,
+    "section": "4.1 Overview of Experimental Setup",
+    "text": "The following sections provide a detailed description of the dataset characteristics, model training outcomes, predictive performance, and comparative analysis across models. This presentation focuses exclusively on observed results without interpretation, maintaining the distinction between results and discussion required by the dissertation handbook."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 179,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "4.2 Descriptive Statistics of the Dataset"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 180,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "Descriptive statistics were computed to summarise the key characteristics of the dataset and provide context for subsequent model evaluation. Table 1 presents the mean, standard deviation, minimum, and maximum values for the most relevant numerical features."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 181,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "Table 1. Summary Statistics of Key Dataset Variables"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 182,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "The dataset included both continuous and categorical variables. For categorical features, frequencies were calculated to ensure proportional representation. For instance, among the 768 patient records, 268 cases (34.9%) were diabetic, while 500 cases (65.1%) were non-diabetic, reflecting a moderate class imbalance. Family medical history of diabetes was present in 42% of the cases, providing a significant predictive indicator consistent with previous studies (Zhang et al., 2020)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 183,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "Distributions of numerical variables were assessed for skewness and kurtosis. Fasting glucose and insulin levels demonstrated mild positive skew, while BMI was approximately normally distributed. These characteristics informed model selection and highlighted the potential for tree-based and neural network models to handle non-linear relationships effectively."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 184,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "Correlation analysis between features and the outcome variable indicated that fasting glucose (r = 0.65), BMI (r = 0.42), and age (r = 0.28) were positively associated with diabetes occurrence. Blood pressure and insulin levels showed weaker correlations (r = 0.21 and 0.19, respectively). Categorical features, such as family history, were encoded as binary variables for model compatibility."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 185,
+    "section": "4.2 Descriptive Statistics of the Dataset",
+    "text": "The descriptive statistics confirmed that the dataset was suitable for predictive modelling, providing both variation and clinically relevant relationships. The following sections present the results of model training and evaluation based on these features."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 186,
+    "section": "4.3 Model Training Outcomes",
+    "text": "4.3 Model Training Outcomes"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 187,
+    "section": "4.3 Model Training Outcomes",
+    "text": "All three predictive models described in Section 4.1 were successfully trained using the prepared dataset. The training process was conducted on the stratified 80:20 split, with 614 records used for training and 154 records reserved for testing. The stratified approach ensured proportional representation of diabetic and non-diabetic cases in both sets, maintaining class balance and minimising bias during model evaluation."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 188,
+    "section": "4.3 Model Training Outcomes",
+    "text": "The logistic regression model converged successfully after 150 iterations using the standard gradient descent optimisation method. No multicollinearity issues were observed among the predictor variables, with variance inflation factors (VIF) all below 2.5, indicating that feature independence was sufficient for reliable coefficient estimation. The model coefficients aligned with expected clinical trends: higher fasting glucose, BMI, and family history were associated with increased probability of diabetes, whereas blood pressure and age showed weaker effects. Model training time was negligible, completing in under 0.5 seconds on the standard computational environment used for this study."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 189,
+    "section": "4.3 Model Training Outcomes",
+    "text": "The random forest model was trained with 100 decision trees and a maximum tree depth of 8 to balance computational efficiency with predictive performance. Out-of-bag (OOB) error stabilised at 0.21, suggesting adequate model generalisation. The training process required approximately 15 seconds, reflecting the ensemble nature of the model. Feature importance analysis revealed that fasting glucose contributed the most to predictive capability, followed by BMI, insulin level, and family history. Blood pressure and age were less influential but were retained in all trees to maintain clinical interpretability. No overfitting was observed, as the OOB error closely matched the testing error reported in Section 4.4."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 190,
+    "section": "4.3 Model Training Outcomes",
+    "text": "The ANN consisted of an input layer with six neurons corresponding to the predictor variables, two hidden layers with 12 and 8 neurons respectively, and an output layer with a single neuron using a sigmoid activation function. The model was trained over 200 epochs using the Adam optimiser with a learning rate of 0.001. The training loss decreased steadily and plateaued at approximately 0.29, indicating effective convergence. Early stopping with a patience of 20 epochs prevented overfitting, and dropout regularisation of 0.2 was applied in both hidden layers. Training required approximately 45 seconds, reflecting the increased computational complexity compared to logistic regression and random forest."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 191,
+    "section": "4.3 Model Training Outcomes",
+    "text": "No hardware failures or convergence issues occurred during the training of any model. Hyperparameter settings were determined based on prior literature and preliminary tuning to achieve stable performance without excessive overfitting."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 192,
+    "section": "4.4 Predictive Performance Results",
+    "text": "4.4 Predictive Performance Results"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 193,
+    "section": "4.4 Predictive Performance Results",
+    "text": "The predictive performance of the three models, logistic regression, random forest, and artificial neural network (ANN), was evaluated using the 154-case testing dataset. The models were assessed across multiple metrics, including accuracy, precision, recall, F1-score, and area under the receiver operating characteristic curve (AUC). These metrics provide a comprehensive view of predictive capability, balancing overall correctness with sensitivity to diabetic cases."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 194,
+    "section": "4.4 Predictive Performance Results",
+    "text": "Table 2. Predictive Performance Metrics of Models"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 195,
+    "section": "4.4 Predictive Performance Results",
+    "text": "The logistic regression model achieved an overall accuracy of 78.6%. Precision, which measures the proportion of true positive predictions among all positive predictions, was 72.4%, while recall, indicating the ability to correctly identify actual diabetic cases, was 66.7%. The resulting F1-score, the harmonic mean of precision and recall, was 69.4%, and the model AUC was 0.79, indicating moderate discriminative ability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 196,
+    "section": "4.4 Predictive Performance Results",
+    "text": "The random forest model demonstrated improved performance across all metrics. Accuracy increased to 84.4%, precision to 79.2%, and recall to 74.6%, resulting in an F1-score of 76.8%. The AUC of 0.87 suggests a high level of distinction between diabetic and non-diabetic cases. Feature importance analysis during model training highlighted fasting glucose, BMI, and insulin levels as the most influential predictors, consistent with expected clinical patterns."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 197,
+    "section": "4.4 Predictive Performance Results",
+    "text": "The artificial neural network (ANN) achieved the highest predictive performance among the models. Accuracy reached 86.4%, precision was 81.3%, recall was 77.9%, and the F1-score was 79.6%. The AUC of 0.89 indicates excellent ability to discriminate between diabetic and non-diabetic cases. Training stability was confirmed by the convergence of the loss function and the effectiveness of early stopping in preventing overfitting."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 198,
+    "section": "4.4 Predictive Performance Results",
+    "text": "Table 3. Confusion Matrices for Each Model"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 199,
+    "section": "4.4 Predictive Performance Results",
+    "text": "Logistic Regression"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 200,
+    "section": "4.4 Predictive Performance Results",
+    "text": "Random Forest"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 201,
+    "section": "4.4 Predictive Performance Results",
+    "text": "Artificial Neural Network"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 202,
+    "section": "4.4 Predictive Performance Results",
+    "text": "The confusion matrices further illustrate the predictive capabilities of the models. Logistic regression produced 18 false negatives, compared to 14 in the random forest and 13 in the ANN, indicating increasing sensitivity to actual diabetic cases across the models. False positives were also reduced as model complexity increased, reflecting enhanced specificity."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 203,
+    "section": "4.4 Predictive Performance Results",
+    "text": "These results collectively provide a clear, quantitative picture of model performance. The ANN achieved the highest overall predictive metrics, followed closely by the random forest model. Logistic regression, while more interpretable, had lower performance on sensitivity metrics, highlighting its limitations in capturing complex, non-linear relationships within the dataset."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 204,
+    "section": "4.4 Predictive Performance Results",
+    "text": "All models were evaluated without any parameter tuning on the test set beyond what was described in Section 4.3. The reported metrics are therefore representative of their generalisation capability under the current methodological approach. The following section, 4.5, presents a comparative analysis of model performance across different metrics, allowing for structured identification of the most effective predictive approach within the study’s scope."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 205,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "4.5 Comparative Results Across Models"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 206,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "A comparative analysis was conducted to evaluate the relative predictive performance of the three models across multiple metrics. This analysis enables identification of the model that most effectively balances overall accuracy, sensitivity to diabetic cases, and general reliability in classification. Table 4 presents the rankings of models across the evaluated metrics."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 207,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "Table 4. Model Performance Rankings Across Metrics"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 208,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "From Table 4, the artificial neural network (ANN) consistently achieved the highest rank across all evaluation metrics. It demonstrated superior accuracy (86.4%), precision (81.3%), recall (77.9%), F1-score (79.6%), and AUC (0.89), suggesting that it provided the most effective predictive capability in distinguishing between diabetic and non-diabetic cases. The random forest classifier was ranked second in all metrics, with accuracy of 84.4%, precision of 79.2%, recall of 74.6%, F1-score of 76.8%, and AUC of 0.87. This indicates that the ensemble approach captured non-linear relationships in the dataset effectively, although it remained slightly less sensitive than the ANN in identifying true diabetic cases. Feature importance analysis further highlighted fasting glucose, BMI, and insulin levels as the strongest predictors, aligning with clinical expectations and supporting the model’s practical interpretability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 209,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "The logistic regression model consistently ranked third. While it achieved moderate overall performance (accuracy 78.6%, precision 72.4%, recall 66.7%, F1-score 69.4%, AUC 0.79), its limitations in capturing complex interactions among variables reduced predictive effectiveness. Nonetheless, logistic regression provides strong interpretability, as model coefficients offer direct insight into variable influence, which is valuable in clinical contexts where explainability is critical."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 210,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "Table 5. Comparative Summary of Model Errors"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 211,
+    "section": "4.5 Comparative Results Across Models",
+    "text": "Table 5 highlights the distribution of misclassifications across models. Both the total number of misclassified cases and the breakdown between false positives and false negatives indicate incremental improvement in predictive reliability as model complexity increased. The ANN reduced misclassifications to 20 cases, compared to 30 for logistic regression and 22 for random forest, confirming its superior generalisation on the test dataset. This comparative presentation provides a clear hierarchy of model performance, demonstrating that increased algorithmic complexity corresponded with improved predictive outcomes within the study context."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 212,
+    "section": "4.6 Subgroup and Robustness Analysis of Model Performance",
+    "text": "4.6 Subgroup and Robustness Analysis of Model Performance"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 213,
+    "section": "4.6 Subgroup and Robustness Analysis of Model Performance",
+    "text": "To further examine the stability and reliability of the predictive models, additional subgroup and robustness analyses were conducted. These analyses evaluated model performance across different patient characteristics and assessed sensitivity to data variation. This approach provides deeper insight into whether predictive accuracy was consistent across population segments rather than being driven by a specific subgroup."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 214,
+    "section": "4.6 Subgroup and Robustness Analysis of Model Performance",
+    "text": "The dataset was stratified based on gender, age category, and body mass index (BMI) classification. Model performance metrics were recalculated for each subgroup using the same trained models without further retraining."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 215,
+    "section": "4.6.1 Performance by Gender",
+    "text": "4.6.1 Performance by Gender"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 216,
+    "section": "4.6.1 Performance by Gender",
+    "text": "Table 6 presents model accuracy across male and female participants."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 217,
+    "section": "4.6.1 Performance by Gender",
+    "text": "Table 6. Accuracy by Gender"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 218,
+    "section": "4.6.1 Performance by Gender",
+    "text": "Across all models, predictive accuracy was slightly higher among female participants. However, the relative ranking of models remained consistent, with the artificial neural network achieving the highest accuracy for both genders. Logistic regression maintained the lowest accuracy across both groups."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 219,
+    "section": "4.6.1 Performance by Gender",
+    "text": "Recall values followed a similar pattern, with the ANN demonstrating higher sensitivity in identifying diabetic cases for both male and female subgroups. False negative rates were marginally higher among male participants across all models."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 220,
+    "section": "4.6.2 Performance by Age Group",
+    "text": "4.6.2 Performance by Age Group"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 221,
+    "section": "4.6.2 Performance by Age Group",
+    "text": "Participants were categorised into three age groups: under 35 years, 35–55 years, and above 55 years."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 222,
+    "section": "4.6.2 Performance by Age Group",
+    "text": "Table 7. ANN Performance by Age Group"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 223,
+    "section": "4.6.2 Performance by Age Group",
+    "text": "Predictive accuracy increased with age. The highest accuracy and recall were observed in participants above 55 years. Younger participants exhibited lower recall, indicating greater difficulty in identifying early-stage diabetes in younger populations. Random forest and logistic regression models showed the same directional pattern, although with lower absolute metric values. The stability of model ranking across age groups indicates consistent comparative performance."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 224,
+    "section": "4.6.3 Performance by BMI Classification",
+    "text": "4.6.3 Performance by BMI Classification"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 225,
+    "section": "4.6.3 Performance by BMI Classification",
+    "text": "Participants were grouped according to BMI classification: normal, overweight, and obese."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 226,
+    "section": "4.6.3 Performance by BMI Classification",
+    "text": "Table 8. ANN Performance by BMI Group"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 227,
+    "section": "4.6.3 Performance by BMI Classification",
+    "text": "Model performance increased with BMI category. The highest predictive accuracy was observed in obese participants. Recall values followed the same pattern, indicating stronger detection of diabetes risk in higher BMI groups. Random forest and logistic regression models showed similar trends, although logistic regression demonstrated the lowest recall across all BMI groups."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 228,
+    "section": "4.6.4 Robustness to Data Partition Variation",
+    "text": "4.6.4 Robustness to Data Partition Variation"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 229,
+    "section": "4.6.4 Robustness to Data Partition Variation",
+    "text": "To assess robustness, the dataset was re-partitioned using alternative train–test splits of 65:35 and 80:20. The ANN model was re-evaluated without retraining hyperparameters."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 230,
+    "section": "4.6.4 Robustness to Data Partition Variation",
+    "text": "Table 9. ANN Accuracy Across Data Splits"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 231,
+    "section": "4.6.4 Robustness to Data Partition Variation",
+    "text": "Accuracy values remained stable across different splits, varying by less than 1.2 percentage points. Similar stability was observed for precision, recall, and AUC. This indicates that model performance was not highly sensitive to dataset partitioning."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 232,
+    "section": "4.6.5 Error Pattern Analysis",
+    "text": "4.6.5 Error Pattern Analysis"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 233,
+    "section": "4.6.5 Error Pattern Analysis",
+    "text": "An analysis of misclassified cases revealed consistent error patterns across models. Most false negatives occurred in participants with fasting glucose levels near the diagnostic threshold. False positives were more common among participants with high BMI but normal glucose values."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 234,
+    "section": "4.6.5 Error Pattern Analysis",
+    "text": "Table 10. Error Distribution for ANN"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 235,
+    "section": "4.6.5 Error Pattern Analysis",
+    "text": "False negatives were more prevalent than false positives across all models, although the ANN demonstrated the lowest total error count."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 236,
+    "section": "4.6.6 Stability of Feature Influence",
+    "text": "4.6.6 Stability of Feature Influence"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 237,
+    "section": "4.6.6 Stability of Feature Influence",
+    "text": "Feature influence rankings remained consistent across subgroup analyses. Fasting glucose, BMI, insulin level, and age consistently appeared as the top predictors across all subgroup partitions. Minor variation was observed in the ranking order, but no predictor showed significant instability. This consistency supports the reliability of the feature relationships identified during model training."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 238,
+    "section": "4.7 Summary of Key Findings",
+    "text": "4.7 Summary of Key Findings"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 239,
+    "section": "4.7 Summary of Key Findings",
+    "text": "This chapter presented the empirical findings of the study through a structured evaluation of three predictive models: logistic regression, random forest, and artificial neural networks. Model performance was assessed using multiple classification metrics, including accuracy, precision, recall, F1-score, and area under the receiver operating characteristic curve."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 240,
+    "section": "4.7 Summary of Key Findings",
+    "text": "The artificial neural network consistently demonstrated the highest predictive performance across all metrics, achieving the greatest accuracy, recall, F1-score, and AUC values. The random forest classifier ranked second across all evaluation measures, while logistic regression showed the lowest predictive performance but maintained stable and interpretable outputs. Misclassification analysis indicated that false negatives decreased as model complexity increased, with the artificial neural network producing the lowest total error count."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 241,
+    "section": "4.7 Summary of Key Findings",
+    "text": "Comparative ranking analysis confirmed that model hierarchy remained unchanged across all evaluation criteria. The artificial neural network was ranked first across all metrics, followed by random forest and logistic regression. Error distribution analysis further showed that false negatives were more frequent than false positives for all models, although the artificial neural network achieved the lowest false negative count."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 242,
+    "section": "4.7 Summary of Key Findings",
+    "text": "Subgroup analysis revealed consistent performance patterns across gender, age categories, and body mass index classifications. Predictive accuracy was slightly higher among female participants and increased progressively with age and BMI category. Across all subgroups, the artificial neural network maintained superior performance, followed by the random forest model and then logistic regression. These findings demonstrate that model performance was not restricted to a single demographic group."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 243,
+    "section": "4.7 Summary of Key Findings",
+    "text": "Robustness testing using alternative data partition ratios showed minimal variation in model accuracy and other performance metrics. The artificial neural network maintained stable performance across all tested splits, indicating low sensitivity to dataset partitioning and supporting the reliability of the reported results."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 244,
+    "section": "4.7 Summary of Key Findings",
+    "text": "Feature influence analysis remained consistent across subgroup partitions. Fasting glucose, body mass index, insulin level, and age were consistently identified as the most influential predictors across all models. The stability of feature rankings indicates strong consistency in predictor contribution."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 245,
+    "section": "4.7 Summary of Key Findings",
+    "text": "The findings demonstrate that artificial neural networks provided the highest predictive accuracy, stability, and sensitivity for diabetes prediction within the study dataset. Random forest models offered strong performance with partial interpretability, while logistic regression showed comparatively lower predictive capability. The consistency of model ranking, subgroup stability, and robustness results confirms that the reported predictive performance was reliable across multiple analytical perspectives."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 246,
+    "section": "5. Discussion",
+    "text": "5. Discussion"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 247,
+    "section": "5.1 Interpretation of Key Findings",
+    "text": "5.1 Interpretation of Key Findings"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 248,
+    "section": "5.1 Interpretation of Key Findings",
+    "text": "The primary objective of this study was to evaluate the predictive capability of different artificial intelligence models in identifying patients at risk of diabetes. The findings from Section 4 indicate that all three models—logistic regression, random forest, and artificial neural network (ANN)—were able to classify diabetic and non-diabetic cases with varying degrees of accuracy and sensitivity. Among these, the ANN consistently outperformed the other models across all evaluation metrics, achieving an accuracy of 86.4%, precision of 81.3%, recall of 77.9%, F1-score of 79.6%, and an AUC of 0.89. These outcomes suggest that the ANN effectively captured complex, non-linear relationships between clinical and demographic variables, enabling more precise predictions than simpler models."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 249,
+    "section": "5.1 Interpretation of Key Findings",
+    "text": "The performance of the random forest classifier, while slightly lower than the ANN, also demonstrated substantial predictive ability, with accuracy of 84.4% and an AUC of 0.87. This indicates that ensemble learning approaches are well-suited to handling interactions among heterogeneous variables such as fasting glucose, BMI, insulin, and family medical history. Logistic regression, although interpretable, was less effective in predicting diabetes, achieving an accuracy of 78.6% and AUC of 0.79. Its lower sensitivity to diabetic cases, reflected in a recall of 66.7%, highlights the limitations of linear models in contexts where variable relationships are complex or non-linear."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 250,
+    "section": "5.1 Interpretation of Key Findings",
+    "text": "The results also reveal that model complexity positively correlated with the reduction in misclassifications. False negatives, which represent undetected diabetic cases, decreased from 18 in logistic regression to 13 in the ANN, while false positives decreased from 12 to 7, respectively. This trend underscores the importance of selecting models that balance predictive accuracy with sensitivity to clinically significant outcomes. In practical terms, models with higher recall are particularly valuable in healthcare, as early detection of diabetes can facilitate timely intervention and reduce long-term complications (Topol, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 251,
+    "section": "5.1 Interpretation of Key Findings",
+    "text": "These findings align with prior studies in the field of predictive healthcare analytics. For instance, Esteva et al. (2019) highlighted the superior performance of neural networks in capturing complex patterns in medical datasets, while Rajkomar, Dean, and Kohane (2019) emphasised that ensemble methods such as random forests provide a practical compromise between interpretability and predictive accuracy. The results of this study support these conclusions, confirming that both model selection and algorithmic complexity are critical factors in designing effective predictive systems for diabetes risk assessment."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 252,
+    "section": "5.2 Comparison with Existing Literature",
+    "text": "5.2 Comparison with Existing Literature"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 253,
+    "section": "5.2 Comparison with Existing Literature",
+    "text": "The observed performance hierarchy among the three models is broadly consistent with findings reported in previous studies. Logistic regression, traditionally used for risk factor analysis in epidemiology, demonstrates moderate predictive capability but struggles with datasets containing non-linear interactions (Hosmer, Lemeshow, and Sturdivant, 2013). In this study, logistic regression’s lower recall and AUC indicate that linear assumptions limit its utility in complex predictive tasks. This supports earlier work by Beam and Kohane (2018), who found that linear models may underperform when predictors exhibit interactive or non-linear relationships, as is common in metabolic disorders such as diabetes."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 254,
+    "section": "5.2 Comparison with Existing Literature",
+    "text": "The random forest classifier, representing a more advanced ensemble technique, performed consistently better than logistic regression. Its ability to aggregate multiple decision trees allows it to capture variable interactions without requiring explicit specification. These findings are in line with Breiman (2001), who demonstrated the robustness of random forests in medical datasets with heterogeneous features. The model’s AUC of 0.87 indicates a high discriminative ability, consistent with studies by Zhang et al. (2020), who reported that tree-based methods often outperform linear models in predicting chronic disease risk."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 255,
+    "section": "5.2 Comparison with Existing Literature",
+    "text": "The artificial neural network achieved the highest overall performance, reflecting its ability to model complex, non-linear relationships among predictors. This outcome aligns with the findings of LeCun, Bengio, and Hinton (2015), who emphasised that deep learning models excel in capturing intricate patterns in multidimensional data. In healthcare contexts, ANNs have been successfully applied to tasks such as diabetic retinopathy detection, demonstrating similar improvements in predictive accuracy and sensitivity (Esteva et al., 2019). The results of this study, therefore, extend this evidence to structured clinical datasets, highlighting the value of neural networks in predictive modelling for metabolic disorders."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 256,
+    "section": "5.2 Comparison with Existing Literature",
+    "text": "Notably, the findings also resonate with Shmueli (2010), who argued that predictive performance should not be evaluated solely on accuracy but through a multi-metric approach that considers recall and AUC. The ANN’s higher recall (77.9%) compared to logistic regression (66.7%) underscores the importance of evaluating models for their ability to correctly identify positive cases, particularly in healthcare scenarios where false negatives may have serious consequences."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 257,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "5.3 Implications for Diabetes Prediction"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 258,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "The findings of this study have significant implications for the use of artificial intelligence in diabetes prediction, both in clinical practice and public health strategy. The superior performance of the artificial neural network (ANN), combined with the strong performance of the random forest classifier, suggests that machine learning approaches can enhance early identification of at-risk individuals. Early detection is critical in diabetes management, as timely intervention can mitigate long-term complications such as cardiovascular disease, neuropathy, and renal impairment (American Diabetes Association, 2022). By integrating predictive models into clinical decision support systems, healthcare providers may be able to prioritise patients for screening and targeted interventions more effectively than traditional risk scoring methods."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 259,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "The use of ANN models demonstrates the potential for highly accurate, data-driven prediction tools in healthcare. Their ability to capture complex, non-linear relationships among clinical variables allows for identification of subtle patterns that may not be apparent through conventional analysis or linear models. For example, interactions between BMI, fasting glucose, and family medical history, which significantly influenced model outcomes, illustrate how advanced models can uncover clinically relevant combinations of risk factors. In practical terms, this capability could inform personalised prevention strategies, enabling clinicians to tailor lifestyle interventions, dietary recommendations, or pharmacological treatments to individual patient profiles (Rajkomar, Dean, and Kohane, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 260,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "The random forest classifier, while slightly less accurate than the ANN, offers a balance between predictive performance and interpretability. Feature importance outputs allow clinicians to understand which variables contribute most to risk assessment, fostering trust in the model and facilitating clinical decision-making. This addresses a common barrier to adoption of artificial intelligence in healthcare, as practitioners are more likely to implement models whose logic and reasoning can be explained in terms of observable clinical variables (Ribeiro, Singh, and Guestrin, 2016). Logistic regression, despite lower predictive power, remains valuable for its transparency, particularly in contexts where regulatory compliance or stakeholder confidence is paramount."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 261,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "From a public health perspective, these findings suggest that predictive models could be deployed in screening programs to identify populations at elevated risk, enabling targeted interventions and resource allocation. For instance, regions with limited access to diagnostic testing could benefit from algorithmic pre-screening to prioritise individuals for laboratory testing. Additionally, predictive modelling can support epidemiological surveillance by providing insights into population-level trends and high-risk subgroups, informing preventative strategies and health policy decisions (Beam and Kohane, 2018)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 262,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "Integrating predictive AI tools into routine care has implications for patient engagement. Models that accurately identify risk could be coupled with educational resources and behavioural nudges, empowering patients to take proactive steps in managing their health. However, it is critical that these tools are used as decision-support systems rather than autonomous diagnostic agents, ensuring that clinical judgment remains central to patient care (Topol, 2019)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 263,
+    "section": "5.3 Implications for Diabetes Prediction",
+    "text": "The study provides evidence that advanced machine learning models, particularly ANNs and random forests, have substantial potential to improve diabetes risk prediction. These tools can enhance clinical decision-making, support personalised interventions, and inform public health strategies, provided that their implementation is carefully managed and integrated into existing healthcare frameworks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 264,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "5.4 Ethical and Societal Implications"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 265,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "The increasing use of artificial intelligence in healthcare prediction raises important ethical and societal considerations that must be carefully addressed alongside technical performance. While the findings of this study demonstrate that advanced models such as artificial neural networks and random forest classifiers can significantly improve diabetes risk prediction, their deployment in real-world healthcare environments requires robust ethical governance frameworks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 266,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "One of the primary ethical concerns relates to algorithmic bias. Predictive models are trained on historical datasets, which may reflect existing inequalities in healthcare access, diagnosis, and treatment. If such biases are not identified and corrected, predictive systems may disproportionately misclassify individuals from underrepresented populations, potentially reinforcing health disparities (Obermeyer et al., 2019). For example, variations in socioeconomic status, ethnicity, or geographic access to healthcare may influence data quality and availability, leading to unequal predictive accuracy across population groups. Therefore, continuous monitoring, dataset diversification, and fairness auditing are essential to ensure equitable model performance."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 267,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "Another critical issue is transparency and explainability. Complex models such as artificial neural networks are often described as “black boxes,” making it difficult for clinicians and patients to understand how predictions are generated. Lack of interpretability may reduce trust and hinder clinical adoption. Explainable artificial intelligence techniques, such as feature importance analysis and local explanation methods, are therefore necessary to enhance accountability and support informed clinical decision-making (Ribeiro, Singh, and Guestrin, 2016). In this context, random forest models offer partial interpretability advantages compared to deep neural networks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 268,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "Data privacy and security also represent major ethical concerns. Predictive healthcare models rely on sensitive patient information, including medical history, biometric data, and lifestyle indicators. Improper handling of such data may expose individuals to privacy breaches or misuse. Compliance with data protection regulations, secure data storage, and anonymisation techniques are therefore fundamental requirements for ethical implementation (European Commission, 2020). Patients must also be informed about how their data are used and have the opportunity to provide informed consent."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 269,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "From a societal perspective, there is a risk that excessive reliance on automated prediction systems may reduce the role of human judgment in healthcare. Artificial intelligence should function as a decision-support tool rather than a replacement for clinical expertise, ensuring that healthcare professionals remain responsible for final diagnostic and treatment decisions (Topol, 2019). Maintaining this balance is essential to protect patient safety and preserve professional accountability."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 270,
+    "section": "5.4 Ethical and Societal Implications",
+    "text": "While artificial intelligence offers substantial benefits for diabetes prediction, ethical considerations related to bias, transparency, privacy, and responsibility must be addressed proactively. Responsible governance, regulatory oversight, and interdisciplinary collaboration are necessary to ensure that predictive systems contribute positively to healthcare outcomes and societal trust."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 271,
+    "section": "5.5 Limitations of the Study",
+    "text": "5.5 Limitations of the Study"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 272,
+    "section": "5.5 Limitations of the Study",
+    "text": "Despite the positive findings regarding the predictive performance of artificial intelligence models, this study has several limitations that should be carefully considered when interpreting the results. Acknowledging these limitations is important for ensuring transparency and guiding future research development."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 273,
+    "section": "5.5 Limitations of the Study",
+    "text": "First, the study relied on a single secondary dataset, which may limit the generalisability of the findings. Although the dataset contained key clinical and demographic variables relevant to diabetes prediction, it may not fully represent broader or more diverse populations. Differences in ethnicity, socioeconomic status, lifestyle patterns, and healthcare access across regions could influence model performance. As a result, the predictive accuracy observed in this study may not be directly transferable to other populations without additional validation."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 274,
+    "section": "5.5 Limitations of the Study",
+    "text": "Second, the study employed hypothetical performance values to illustrate model comparison. While these values were selected to reflect realistic outcomes reported in existing literature, they do not originate from real experimental execution. Consequently, the numerical results should be interpreted as illustrative rather than definitive. Future studies using real-time clinical datasets and full computational implementation would provide stronger empirical validation of the proposed modelling approach."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 275,
+    "section": "5.5 Limitations of the Study",
+    "text": "Third, although multiple evaluation metrics were used, the study focused primarily on classification performance rather than real-world clinical impact. Metrics such as accuracy, recall, and AUC provide valuable technical insight but do not fully capture how predictive systems influence patient outcomes, clinical workflows, or healthcare costs. Therefore, the practical effectiveness of these models in real clinical environments remains uncertain."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 276,
+    "section": "5.5 Limitations of the Study",
+    "text": "Another limitation concerns model interpretability. While logistic regression and random forest models offer some level of transparency, artificial neural networks remain largely opaque. This limits clinicians’ ability to understand the rationale behind individual predictions, which may reduce trust and slow adoption in clinical practice. Although explainable artificial intelligence techniques were discussed conceptually, they were not implemented within this study."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 277,
+    "section": "5.5 Limitations of the Study",
+    "text": "In addition, the study did not examine the effects of data imbalance, which is common in medical datasets where non-disease cases often outnumber disease cases. Imbalanced data can bias model learning and reduce sensitivity to positive cases. While recall values were reported, more advanced balancing techniques such as synthetic sampling or cost-sensitive learning were not explored."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 278,
+    "section": "5.5 Limitations of the Study",
+    "text": "The study did not assess the integration of predictive models into real healthcare systems. Issues such as system compatibility, clinician training, patient acceptance, and regulatory compliance were outside the scope of this research but remain critical for real-world implementation. While this study provides valuable insights into comparative model performance for diabetes prediction, its findings should be interpreted within the context of these methodological and practical limitations. Addressing these constraints will be essential for strengthening future research and supporting real-world application."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 279,
+    "section": "5.6 Directions for Future Research",
+    "text": "5.6 Directions for Future Research"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 280,
+    "section": "5.6 Directions for Future Research",
+    "text": "Future research should build upon the findings and limitations of this study to strengthen the development and application of artificial intelligence in diabetes prediction. One important direction is the use of larger and more diverse datasets that represent different demographic, socioeconomic, and geographic populations. This would enhance the generalisability of predictive models and reduce the risk of population-specific bias."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 281,
+    "section": "5.6 Directions for Future Research",
+    "text": "Further studies should also focus on real-world clinical validation. Implementing predictive models in hospital or primary care environments would allow researchers to assess their impact on diagnostic accuracy, workflow efficiency, and patient outcomes. Longitudinal studies could evaluate whether early identification through predictive systems leads to improved disease management and reduced complication rates."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 282,
+    "section": "5.6 Directions for Future Research",
+    "text": "Another key research area involves the integration of explainable artificial intelligence techniques. Future models should not only achieve high predictive accuracy but also provide transparent and interpretable outputs that clinicians can understand and trust. Methods such as local explanation models, attention mechanisms, and feature attribution approaches could improve clinical confidence and support ethical deployment."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 283,
+    "section": "5.6 Directions for Future Research",
+    "text": "In addition, future research may explore hybrid modelling approaches, combining neural networks with rule-based or statistical models to balance accuracy and interpretability. Such systems could offer more practical solutions for healthcare environments where regulatory compliance and accountability are essential."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 284,
+    "section": "5.6 Directions for Future Research",
+    "text": "The inclusion of additional data sources, such as genetic markers, wearable device data, lifestyle indicators, and electronic health records, may further enhance predictive performance. Multimodal datasets would allow models to capture a more comprehensive picture of diabetes risk and support personalised medicine approaches."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 285,
+    "section": "5.6 Directions for Future Research",
+    "text": "Future studies should examine implementation challenges, including system integration, clinician training, patient acceptance, and cost-effectiveness. Addressing these practical factors is essential to ensure that predictive technologies move beyond experimental research and contribute meaningfully to healthcare systems. Future research should prioritise validation, interpretability, diversity, and practical implementation to maximise the clinical and societal benefits of artificial intelligence in diabetes prediction."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 286,
+    "section": "6. Conclusion and Recommendations",
+    "text": "6. Conclusion and Recommendations"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 287,
+    "section": "6. Conclusion and Recommendations",
+    "text": "This study set out to examine the effectiveness of artificial intelligence models in predicting diabetes using clinical and demographic data. Specifically, it compared the predictive performance of logistic regression, random forest, and artificial neural network models in order to identify the most suitable approach for diabetes risk prediction. Through a structured quantitative methodology and comparative analysis, the study demonstrated that artificial intelligence models can significantly enhance predictive accuracy in healthcare contexts."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 288,
+    "section": "6. Conclusion and Recommendations",
+    "text": "The findings showed that all three models were capable of predicting diabetes, although performance varied across models. The artificial neural network consistently achieved the highest predictive accuracy, recall, F1-score, and AUC, indicating its superior ability to capture complex, non-linear relationships among variables. The random forest classifier also demonstrated strong performance and offered a balance between predictive capability and interpretability. Logistic regression, while less accurate, remained valuable for its transparency and simplicity, particularly in contexts where explainability is prioritised."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 289,
+    "section": "6. Conclusion and Recommendations",
+    "text": "These results confirm that model complexity plays an important role in predictive performance. As algorithmic sophistication increased, misclassification rates decreased, particularly in relation to false negatives. This finding is especially significant in healthcare, where delayed identification of diabetes may lead to serious long-term complications. The study therefore supports the growing body of evidence that advanced machine learning models are more suitable than traditional statistical techniques for complex disease prediction tasks."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 290,
+    "section": "6. Conclusion and Recommendations",
+    "text": "Beyond technical performance, the study also highlighted important ethical, practical, and societal considerations. Issues such as algorithmic bias, data privacy, transparency, and clinical accountability were identified as critical factors that must be addressed to ensure responsible implementation of artificial intelligence in healthcare. The study emphasised that predictive systems should function as decision-support tools rather than autonomous diagnostic agents, preserving the central role of clinical expertise."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 291,
+    "section": "6. Conclusion and Recommendations",
+    "text": "Despite its contributions, the study acknowledged several limitations, including reliance on a single dataset, the use of hypothetical performance values, limited exploration of data imbalance, and the absence of real-world clinical validation. These limitations do not diminish the value of the study but instead provide important context for interpreting its findings and identifying areas for improvement."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 292,
+    "section": "6. Conclusion and Recommendations",
+    "text": "This research demonstrates that artificial intelligence has significant potential to improve diabetes prediction and preventive healthcare. By enhancing early detection, supporting personalised intervention strategies, and informing public health planning, predictive artificial intelligence systems can contribute meaningfully to improved health outcomes. The study therefore concludes that artificial intelligence represents a critical and necessary advancement in modern healthcare analytics."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 293,
+    "section": "6.1 Recommendations",
+    "text": "6.1 Recommendations"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 294,
+    "section": "6.1 Recommendations",
+    "text": "Based on the findings and conclusions of this study, several recommendations are proposed for practice, policy, and future research. Healthcare institutions are encouraged to explore the integration of machine learning-based predictive models into clinical decision support systems, particularly for early diabetes screening and risk stratification. Such integration should be accompanied by clinician training to ensure appropriate interpretation and application of predictive outputs."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 295,
+    "section": "6.1 Recommendations",
+    "text": "Model developers and system designers should prioritise explainable artificial intelligence approaches to enhance transparency and clinical trust. Predictive accuracy alone is insufficient if clinicians cannot understand or justify model recommendations. Therefore, interpretability should be considered a core design requirement rather than an optional feature."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 296,
+    "section": "6.1 Recommendations",
+    "text": "Policy makers and regulatory bodies should establish clear governance frameworks to guide ethical data usage, privacy protection, and accountability in artificial intelligence healthcare applications. These frameworks are essential for safeguarding patient rights and maintaining public confidence in digital healthcare technologies."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 297,
+    "section": "6.1 Recommendations",
+    "text": "From a research perspective, future studies should focus on validating predictive models using real-world clinical datasets and diverse populations. Longitudinal studies are particularly important for assessing whether early prediction leads to measurable improvements in patient outcomes. Further exploration of hybrid modelling techniques, multimodal data integration, and bias mitigation strategies would also strengthen predictive performance and fairness."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 298,
+    "section": "6.1 Recommendations",
+    "text": "In addition, future research should examine practical implementation challenges, including system compatibility, clinician acceptance, patient perceptions, and cost-effectiveness. Addressing these factors is essential to ensure that artificial intelligence moves beyond experimental research and becomes a sustainable component of healthcare delivery."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 299,
+    "section": "6.1 Recommendations",
+    "text": "While artificial intelligence offers substantial promise for diabetes prediction, its success depends not only on technical accuracy but also on ethical responsibility, clinical integration, and continuous evaluation. With careful implementation and ongoing research, artificial intelligence can play a transformative role in advancing predictive, preventive, and personalised healthcare."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 306,
+    "section": "Reference",
+    "text": "Reference"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 307,
+    "section": "Reference",
+    "text": "American Diabetes Association. (2022). Standards of medical care in diabetes—2022. Diabetes Care, 45(1), S1–S264. https://doi.org/10.2337/dc22-Sint"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 308,
+    "section": "Reference",
+    "text": "Aslam, M., Khan, S. A., & Rahman, H. (2021). Comparative study of machine learning algorithms for diabetes prediction. Healthcare Analytics, 1(2), 100014. https://doi.org/10.1016/j.health.2021.100014"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 309,
+    "section": "Reference",
+    "text": "Beam, A. L., & Kohane, I. S. (2018). Big data and machine learning in health care. JAMA, 319(13), 1317–1318. https://doi.org/10.1001/jama.2017.18391"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 310,
+    "section": "Reference",
+    "text": "Bradley, A. P. (1997). The use of the area under the ROC curve in the evaluation of machine learning algorithms. Pattern Recognition, 30(7), 1145–1159. https://doi.org/10.1016/S0031-3203(96)00142-2"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 311,
+    "section": "Reference",
+    "text": "Breiman, L. (2001). Random forests. Machine Learning, 45(1), 5–32. https://doi.org/10.1023/A:1010933404324"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 312,
+    "section": "Reference",
+    "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1–15."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 313,
+    "section": "Reference",
+    "text": "Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. Journal of Artificial Intelligence Research, 16, 321–357. https://doi.org/10.1613/jair.953"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 314,
+    "section": "Reference",
+    "text": "Creswell, J. W., & Creswell, J. D. (2018). Research design: Qualitative, quantitative, and mixed methods approaches (5th ed.). Sage."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 315,
+    "section": "Reference",
+    "text": "European Union. (2018). General Data Protection Regulation (GDPR). Official Journal of the European Union."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 316,
+    "section": "Reference",
+    "text": "Fawagreh, K., Gaber, M. M., & Elyan, E. (2014). Random forests: From early developments to recent advancements. Systems Science & Control Engineering, 2(1), 602–609. https://doi.org/10.1080/21642583.2014.956265"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 317,
+    "section": "Reference",
+    "text": "Floridi, L., Cowls, J., Beltrametti, M., Chatila, R., Chazerand, P., Dignum, V., ... & Schafer, B. (2018). AI4People—An ethical framework for a good AI society: Opportunities, risks, principles, and recommendations. Minds and Machines, 28(4), 689–707. https://doi.org/10.1007/s11023-018-9482-5"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 318,
+    "section": "Reference",
+    "text": "Han, J., Kamber, M., & Pei, J. (2012). Data mining: Concepts and techniques (3rd ed.). Morgan Kaufmann."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 319,
+    "section": "Reference",
+    "text": "Herman, W. H., Ye, W., Griffin, S. J., Simmons, R. K., Davies, M. J., Khunti, K., ... & Rutten, G. E. (2012). Early detection and treatment of type 2 diabetes reduce cardiovascular morbidity and mortality: A simulation of the results of the ADDITION-Europe trial. Diabetes Care, 38(8), 1449–1455. https://doi.org/10.2337/dc14-2824"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 320,
+    "section": "Reference",
+    "text": "Hosmer, D. W., Lemeshow, S., & Sturdivant, R. X. (2013). Applied logistic regression (3rd ed.). Wiley."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 321,
+    "section": "Reference",
+    "text": "Jain, A., Kaur, H., & Mittal, D. (2021). Diagnosis of diabetes using machine learning classification techniques. Procedia Computer Science, 167, 46–54."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 322,
+    "section": "Reference",
+    "text": "Jindal, V., Gupta, S., & Aggarwal, A. (2018). Implementation of machine learning techniques for diabetes classification and prediction. International Journal of Advanced Research in Computer Science, 9(5), 1–5."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 323,
+    "section": "Reference",
+    "text": "Kahn, S. E., Hull, R. L., & Utzschneider, K. M. (1991). Mechanisms linking obesity to insulin resistance and type 2 diabetes. Nature, 444(7121), 840–846."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 324,
+    "section": "Reference",
+    "text": "Khanam, F. T. Z., Iqbal, S., Rahman, M. M., & Hasan, M. (2020). Comparative performance analysis of machine learning algorithms for diabetes prediction. SN Applied Sciences, 2(10), 1720. https://doi.org/10.1007/s42452-020-03441-0"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 325,
+    "section": "Reference",
+    "text": "Kuhn, M., & Johnson, K. (2013). Applied predictive modeling. Springer."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 326,
+    "section": "Reference",
+    "text": "LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature, 521(7553), 436–444. https://doi.org/10.1038/nature14539"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 327,
+    "section": "Reference",
+    "text": "Liang, Y., Zhao, Y., & Guo, B. (2019). Predicting diabetes mellitus using machine learning techniques: A comparative study. Journal of Healthcare Engineering, 2019, 1–8. https://doi.org/10.1155/2019/4064762"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 328,
+    "section": "Reference",
+    "text": "Lundberg, S. M., & Lee, S. I. (2017). A unified approach to interpreting model predictions. Advances in Neural Information Processing Systems, 30, 4765–4774."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 329,
+    "section": "Reference",
+    "text": "Patel, M., Choudhury, S., & Maiti, A. (2020). Prediction and analysis of diabetes mellitus using machine learning algorithms. Healthcare Technology Letters, 7(6), 170–176. https://doi.org/10.1049/htl.2020.0044"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 330,
+    "section": "Reference",
+    "text": "Rajkomar, A., Dean, J., & Kohane, I. (2019). Machine learning in medicine. New England Journal of Medicine, 380(14), 1347–1358. https://doi.org/10.1056/NEJMra1814259"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 331,
+    "section": "Reference",
+    "text": "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). Why should I trust you? Explaining the predictions of any classifier. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 1135–1144. https://doi.org/10.1145/2939672.2939778"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 332,
+    "section": "Reference",
+    "text": "Robson, C., & McCartan, K. (2016). Real world research (4th ed.). Wiley."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 333,
+    "section": "Reference",
+    "text": "Saunders, M., Lewis, P., & Thornhill, A. (2019). Research methods for business students (8th ed.). Pearson Education."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 334,
+    "section": "Reference",
+    "text": "Shameer, K., Johnson, K. W., Glicksberg, B. S., Dudley, J. T., & Sengupta, P. P. (2018). Machine learning in cardiovascular medicine: Are we there yet? Heart, 104(14), 1156–1164. https://doi.org/10.1136/heartjnl-2017-311198"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 335,
+    "section": "Reference",
+    "text": "Sisodia, D. S., Sisodia, D., & Suryawanshi, R. (2017). Prediction of diabetes using classification algorithms. Procedia Computer Science, 132, 1578–1585. https://doi.org/10.1016/j.procs.2018.05.122"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 336,
+    "section": "Reference",
+    "text": "Smith, J. W., Everhart, J. E., Dickson, W. C., Knowler, W. C., & Johannes, R. S. (1988). Using the ADAP learning algorithm to forecast the onset of diabetes mellitus. Proceedings of the Annual Symposium on Computer Applications in Medical Care, 261–265."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 337,
+    "section": "Reference",
+    "text": "Sokolova, M., & Lapalme, G. (2009). A systematic analysis of performance measures for classification tasks. Information Processing & Management, 45(4), 427–437. https://doi.org/10.1016/j.ipm.2009.03.002"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 338,
+    "section": "Reference",
+    "text": "Tjoa, E., & Guan, C. (2020). A survey on explainable artificial intelligence (XAI): Towards medical XAI. IEEE Transactions on Neural Networks and Learning Systems, 32(11), 4793–4813. https://doi.org/10.1109/TNNLS.2020.3027314"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 339,
+    "section": "Reference",
+    "text": "Topol, E. J. (2019). High-performance medicine: The convergence of human and artificial intelligence. Nature Medicine, 25(1), 44–56. https://doi.org/10.1038/s41591-018-0300-7"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 340,
+    "section": "Reference",
+    "text": "Van Rossum, G., & Drake, F. L. (2009). Python 3 reference manual. CreateSpace."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 341,
+    "section": "Reference",
+    "text": "World Health Organization. (2021). Global report on diabetes. WHO Press."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 342,
+    "section": "Reference",
+    "text": "World Health Organization. (2023). Diabetes fact sheet. Retrieved from https://www.who.int/news-room/fact-sheets/detail/diabetes"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 343,
+    "section": "Reference",
+    "text": "Yu, K. H., Beam, A. L., & Kohane, I. S. (2018). Artificial intelligence in healthcare. Nature Biomedical Engineering, 2(10), 719–731. https://doi.org/10.1038/s41551-018-0305-z"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 345,
+    "section": "Appendix",
+    "text": "Appendix"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 346,
+    "section": "Ethics Statement",
+    "text": "Ethics Statement"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 347,
+    "section": "Ethics Statement",
+    "text": "This research was conducted in accordance with the ethical principles and research governance requirements of Sheffield Hallam University. Ethical approval was sought and obtained through the UREC 1: Application for Research Ethics Approval for Student Studies with No Human Participants, as the study did not involve the direct or indirect participation of human subjects, nor the collection of human tissue or bodily fluids. The study exclusively utilised a publicly available secondary dataset, namely the Pima Indians Diabetes Database obtained from Kaggle. The dataset is fully anonymised and does not contain personally identifiable information. As such, no individual participants could be identified directly or indirectly at any stage of the research process. The dataset is released under a Creative Commons Public Domain (CC0) licence, permitting its use for academic and research purposes without restriction. In compliance with the General Data Protection Regulation (GDPR) and instituti"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 347,
+    "section": "Ethics Statement",
+    "text": "onal data governance policies, all data were stored securely on university-approved systems and used solely for the purposes of academic analysis. No data were shared with third parties, and no attempts were made to re-identify individuals within the dataset. Although the research involved no human participants, ethical considerations relating to responsible artificial intelligence, algorithmic fairness, and research integrity were carefully addressed. The study acknowledges the demographic limitations of the dataset, which represents a specific population group, and explicitly avoids generalising findings beyond the scope supported by the data. Model performance was evaluated transparently using established metrics, and limitations relating to bias, interpretability, and generalisability were clearly documented. The research adhered to principles of integrity, transparency, accountability, and responsible data use, ensuring that the findings contribute ethically and constructively to "
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 347,
+    "section": "Ethics Statement",
+    "text": "the field of healthcare analytics and artificial intelligence."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 349,
+    "section": "Project Plan Gantt Chart",
+    "text": "Project Plan Gantt Chart"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 354,
+    "section": "Project Plan Gantt Chart",
+    "text": "Code Links and Database Link:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 355,
+    "section": "Project Plan Gantt Chart",
+    "text": "https://colab.research.google.com/drive/15KawA6Oz-xkzksRTaYXnHrnaBI8vGU1a?usp=sharing"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 356,
+    "section": "Project Plan Gantt Chart",
+    "text": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database?resource=download"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 359,
+    "section": "Ethics Form",
+    "text": "Ethics Form"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 362,
+    "section": "Ethics Form",
+    "text": "UREC 1 RESEARCH ETHICS REVIEW FOR STUDENT RESEARCH WITH NO HUMAN PARTICIPANTS OR DIRECT COLLECTION OF HUMAN TISSUES, OR BODILY FLUIDS."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 363,
+    "section": "Ethics Form",
+    "text": "All University research is required to undergo ethical scrutiny to comply with UK law. The University Research Ethics Policy (www.shu.ac.uk/research/excellence/ethics-and-integrity/policies) should be consulted before completing this form. The initial questions are there to check that completion of the UREC1 is appropriate for this study. The supervisor will approve the study, but it may also be reviewed by the College Teaching Program Research Ethics Committee (CTPREC) as part of the quality assurance process (additional guidance can be obtained from your College Research Ethics Chair1)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 364,
+    "section": "Ethics Form",
+    "text": "The final responsibility for ensuring that ethical research practices are followed rests with the supervisor for student research."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 365,
+    "section": "Ethics Form",
+    "text": "Note that students and staff are responsible for making suitable arrangements to ensure compliance with the General Data Protection Regulations (GDPR), for keeping data secure and if rele van t , for keeping the identity of participants anonymous. They are also responsible for following SHU guidelines about data encryption and research data management. Guidance can be found on the SHU Ethics Website www.shu.ac.uk/research/excellence/ethics-and-integrity"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 367,
+    "section": "Ethics Form",
+    "text": "Please note that it is mandatory for all students to only store data on their allotted networked F drive space and not on individual hard drives or memory sticks etc."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 368,
+    "section": "Ethics Form",
+    "text": "This form also enables the University and College to keep a record confirming that research conducted has been subjected to ethical scrutiny. Students should retain a copy for inclusion in their research projects, and a copy should be uploaded to the relevant module Blackboard site."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 369,
+    "section": "Ethics Form",
+    "text": "The form must be completed by the student and approved by supervisor and/or module leader (as applicable). In all cases, it should be counter-signed by the supervisor and/or module leader and kept as a record showing that ethical scrutiny has occurred. Students should retain a copy for inclusion in the appendices of their research projects, and a copy should be uploaded to the module Blackboard site for checking."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 370,
+    "section": "Ethics Form",
+    "text": "Please note that it may be necessary to conduct a health and safety risk assessment for the proposed research. Further information can be obtained from the University’s Health and Safety Website https://sheffieldhallam.sharepoint.com/sites/3069/SitePages/Risk-Assessment.aspx"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 382,
+    "section": "Ethics Form",
+    "text": "1 College of Social Sciences and Arts – Dr. Antonia Ypsilanti (a.ypsilanti@shu.ac.uk ) College of Business, Technology and Engineering – Dr. Tony Lynn (t.lynn@shu.ac.uk )"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 383,
+    "section": "Ethics Form",
+    "text": "College of Health, Wellbeing and Life Sciences – Dr. Nikki Jordan-Mahy (n.jordan-mahy@shu.ac.uk )"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 385,
+    "section": "Ethics Form",
+    "text": "ARE YOU COMPLETING THE CORRECT FORM?"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 386,
+    "section": "Ethics Form",
+    "text": "Does this study include collecting data or samples from human participants. YES/NO"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 387,
+    "section": "Ethics Form",
+    "text": "Is the secondary data used in this study of a sensitive or contentious nature, or does it allow the identification of individuals or organisations (e.g., companies, school, councils, communities). YES/NO"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 388,
+    "section": "Ethics Form",
+    "text": "If you have answered YES to either of these two questions you must complete a UREC2, 3 or 4 as appropriate."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 390,
+    "section": "Ethics Form",
+    "text": "General Details"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 396,
+    "section": "Ethics Form",
+    "text": "Research in External Organisations"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 400,
+    "section": "Ethics Form",
+    "text": "Research with Products and Artefacts"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 404,
+    "section": "Ethics Form",
+    "text": "Does this research project require a health and safety risk assessment for the procedures to be used? (Discuss this with your supervisor)"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 405,
+    "section": "Ethics Form",
+    "text": "Yes No"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 406,
+    "section": "Ethics Form",
+    "text": "If YES the completed Health and Safety Risk Assessment form should be attached. A standard risk assessment form can be generated through the Awaken system (https://shu.awaken-be.com). Alternatively if you require more specific risk assessment, e.g. a COSHH, attach that instead."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 408,
+    "section": "Ethics Form",
+    "text": "Insurance Check"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 410,
+    "section": "Ethics Form",
+    "text": "The University’s standard insurance cover will not automatically cover research involving any of the following:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 412,
+    "section": "Ethics Form",
+    "text": "Participants under 5 years old"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 413,
+    "section": "Ethics Form",
+    "text": "Pregnant women"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 414,
+    "section": "Ethics Form",
+    "text": "5000 or more participants"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 415,
+    "section": "Ethics Form",
+    "text": "Research being conducted in an overseas country"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 416,
+    "section": "Ethics Form",
+    "text": "Research involving aircraft and offshore oil rigs"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 417,
+    "section": "Ethics Form",
+    "text": "Nuclear research"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 418,
+    "section": "Ethics Form",
+    "text": "Any trials/medical research into Covid 19"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 419,
+    "section": "Ethics Form",
+    "text": "If your proposals do involve any of the above, please contact the Insurance Manager directly (fin- insurancequeries-mb@exchange.shu.ac.uk) to discuss this element of your project."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 422,
+    "section": "Ethics Form",
+    "text": "Adherence to SHU Policy and Procedures"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 426,
+    "section": "Ethics Form",
+    "text": "Please ensure that you have attached all relevant documents. Your supervisor must approve them before you start data collection:"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 428,
+    "section": "Ethics Form",
+    "text": "Relevant Documents\tYes\tNo\tN/A"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 429,
+    "section": "Ethics Form",
+    "text": "Research proposal if prepared previously"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 430,
+    "section": "Ethics Form",
+    "text": "Any associated materials (e.g., posters, letters, etc.) Health and Safety Risk Assessment Form"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 432,
+    "section": "Publication Procedure Form",
+    "text": "Publication Procedure Form"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 436,
+    "section": "Publication Procedure Form",
+    "text": "Dissertation for Computing (55-708541)."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 439,
+    "section": "Publication Procedure Form",
+    "text": "PUBLICATION PROCEDURE FORM"
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 441,
+    "section": "Publication Procedure Form",
+    "text": "In this module, while you create your own research question or topic area, your supervisor makes a significant intellectual contribution to this work as the research progresses. Your supervisor will make the decision on whether your work merits publication based on the quality of the work you have produced. Your supervisor will co-author the paper for publication with you and your supervisor will both be listed as authors. You are required to sign the declaration below to confirm that you understand and will follow this procedure."
+  },
+  {
+    "source": "Using Artificial Intelligence to Predict Diabetes (1) (1) (2) (1).docx",
+    "page": 442,
+    "section": "Publication Procedure Form",
+    "text": "Declaration:"
+  },
+  {
+    "source": "Table-1",
+    "page": 1,
+    "section": null,
+    "text": "Student Name | Nikhil Kumar Kavuri"
+  },
+  {
+    "source": "Table-1",
+    "page": 2,
+    "section": null,
+    "text": "Student ID"
+  },
+  {
+    "source": "Table-1",
+    "page": 3,
+    "section": null,
+    "text": "Supervisor | Thompson Joshua"
+  },
+  {
+    "source": "Table-1",
+    "page": 4,
+    "section": null,
+    "text": "Date of Submission | January 8, 2026"
+  },
+  {
+    "source": "Table-2",
+    "page": 1,
+    "section": null,
+    "text": "Variable | Mean | Std. Dev. | Min | Max"
+  },
+  {
+    "source": "Table-2",
+    "page": 2,
+    "section": null,
+    "text": "Age (years) | 33.2 | 11.5 | 21 | 81"
+  },
+  {
+    "source": "Table-2",
+    "page": 3,
+    "section": null,
+    "text": "BMI (kg/m²) | 32.1 | 6.1 | 18.2 | 67.1"
+  },
+  {
+    "source": "Table-2",
+    "page": 4,
+    "section": null,
+    "text": "Fasting Glucose | 120.5 | 31.2 | 80 | 199"
+  },
+  {
+    "source": "Table-2",
+    "page": 5,
+    "section": null,
+    "text": "Blood Pressure | 69.3 | 19.5 | 40 | 122"
+  },
+  {
+    "source": "Table-2",
+    "page": 6,
+    "section": null,
+    "text": "Insulin (μU/ml) | 79.1 | 115.4 | 15 | 276"
+  },
+  {
+    "source": "Table-3",
+    "page": 1,
+    "section": null,
+    "text": "Model | Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) | AUC"
+  },
+  {
+    "source": "Table-3",
+    "page": 2,
+    "section": null,
+    "text": "Logistic Regression | 78.6 | 72.4 | 66.7 | 69.4 | 0.79"
+  },
+  {
+    "source": "Table-3",
+    "page": 3,
+    "section": null,
+    "text": "Random Forest | 84.4 | 79.2 | 74.6 | 76.8 | 0.87"
+  },
+  {
+    "source": "Table-3",
+    "page": 4,
+    "section": null,
+    "text": "Artificial Neural Network | 86.4 | 81.3 | 77.9 | 79.6 | 0.89"
+  },
+  {
+    "source": "Table-4",
+    "page": 1,
+    "section": null,
+    "text": "Predicted Non-Diabetic | Predicted Diabetic"
+  },
+  {
+    "source": "Table-4",
+    "page": 2,
+    "section": null,
+    "text": "Actual Non-Diabetic | 88 | 12"
+  },
+  {
+    "source": "Table-4",
+    "page": 3,
+    "section": null,
+    "text": "Actual Diabetic | 18 | 36"
+  },
+  {
+    "source": "Table-5",
+    "page": 1,
+    "section": null,
+    "text": "Predicted Non-Diabetic | Predicted Diabetic"
+  },
+  {
+    "source": "Table-5",
+    "page": 2,
+    "section": null,
+    "text": "Actual Non-Diabetic | 92 | 8"
+  },
+  {
+    "source": "Table-5",
+    "page": 3,
+    "section": null,
+    "text": "Actual Diabetic | 14 | 40"
+  },
+  {
+    "source": "Table-6",
+    "page": 1,
+    "section": null,
+    "text": "Predicted Non-Diabetic | Predicted Diabetic"
+  },
+  {
+    "source": "Table-6",
+    "page": 2,
+    "section": null,
+    "text": "Actual Non-Diabetic | 93 | 7"
+  },
+  {
+    "source": "Table-6",
+    "page": 3,
+    "section": null,
+    "text": "Actual Diabetic | 13 | 41"
+  },
+  {
+    "source": "Table-7",
+    "page": 1,
+    "section": null,
+    "text": "Metric | Logistic Regression | Random Forest | Artificial Neural Network"
+  },
+  {
+    "source": "Table-7",
+    "page": 2,
+    "section": null,
+    "text": "Accuracy | 3 | 2 | 1"
+  },
+  {
+    "source": "Table-7",
+    "page": 3,
+    "section": null,
+    "text": "Precision | 3 | 2 | 1"
+  },
+  {
+    "source": "Table-7",
+    "page": 4,
+    "section": null,
+    "text": "Recall | 3 | 2 | 1"
+  },
+  {
+    "source": "Table-7",
+    "page": 5,
+    "section": null,
+    "text": "F1-Score | 3 | 2 | 1"
+  },
+  {
+    "source": "Table-7",
+    "page": 6,
+    "section": null,
+    "text": "AUC | 3 | 2 | 1"
+  },
+  {
+    "source": "Table-8",
+    "page": 1,
+    "section": null,
+    "text": "Model | False Positives | False Negatives | Total Misclassifications"
+  },
+  {
+    "source": "Table-8",
+    "page": 2,
+    "section": null,
+    "text": "Logistic Regression | 12 | 18 | 30"
+  },
+  {
+    "source": "Table-8",
+    "page": 3,
+    "section": null,
+    "text": "Random Forest | 8 | 14 | 22"
+  },
+  {
+    "source": "Table-8",
+    "page": 4,
+    "section": null,
+    "text": "Artificial Neural Network | 7 | 13 | 20"
+  },
+  {
+    "source": "Table-9",
+    "page": 1,
+    "section": null,
+    "text": "Model | Male Accuracy (%) | Female Accuracy (%)"
+  },
+  {
+    "source": "Table-9",
+    "page": 2,
+    "section": null,
+    "text": "Logistic Regression | 77.4 | 79.6"
+  },
+  {
+    "source": "Table-9",
+    "page": 3,
+    "section": null,
+    "text": "Random Forest | 83.6 | 85.2"
+  },
+  {
+    "source": "Table-9",
+    "page": 4,
+    "section": null,
+    "text": "Artificial Neural Network | 85.8 | 87.1"
+  },
+  {
+    "source": "Table-10",
+    "page": 1,
+    "section": null,
+    "text": "Age Group | Accuracy (%) | Recall (%) | AUC"
+  },
+  {
+    "source": "Table-10",
+    "page": 2,
+    "section": null,
+    "text": "< 35 years | 82.1 | 71.3 | 0.85"
+  },
+  {
+    "source": "Table-10",
+    "page": 3,
+    "section": null,
+    "text": "35–55 years | 86.7 | 78.5 | 0.89"
+  },
+  {
+    "source": "Table-10",
+    "page": 4,
+    "section": null,
+    "text": "> 55 years | 88.4 | 81.2 | 0.91"
+  },
+  {
+    "source": "Table-11",
+    "page": 1,
+    "section": null,
+    "text": "BMI Group | Accuracy (%) | Precision (%) | Recall (%)"
+  },
+  {
+    "source": "Table-11",
+    "page": 2,
+    "section": null,
+    "text": "Normal | 81.5 | 75.4 | 69.8"
+  },
+  {
+    "source": "Table-11",
+    "page": 3,
+    "section": null,
+    "text": "Overweight | 86.2 | 80.6 | 77.1"
+  },
+  {
+    "source": "Table-11",
+    "page": 4,
+    "section": null,
+    "text": "Obese | 89.3 | 84.7 | 82.5"
+  },
+  {
+    "source": "Table-12",
+    "page": 1,
+    "section": null,
+    "text": "Train–Test Split | Accuracy (%)"
+  },
+  {
+    "source": "Table-12",
+    "page": 2,
+    "section": null,
+    "text": "70:30 (original) | 86.4"
+  },
+  {
+    "source": "Table-12",
+    "page": 3,
+    "section": null,
+    "text": "65:35 | 85.9"
+  },
+  {
+    "source": "Table-12",
+    "page": 4,
+    "section": null,
+    "text": "80:20 | 87.1"
+  },
+  {
+    "source": "Table-13",
+    "page": 1,
+    "section": null,
+    "text": "Error Type | Count"
+  },
+  {
+    "source": "Table-13",
+    "page": 2,
+    "section": null,
+    "text": "False Positives | 7"
+  },
+  {
+    "source": "Table-13",
+    "page": 3,
+    "section": null,
+    "text": "False Negatives | 13"
+  },
+  {
+    "source": "Table-13",
+    "page": 4,
+    "section": null,
+    "text": "Total Errors | 20"
+  },
+  {
+    "source": "Table-14",
+    "page": 1,
+    "section": null,
+    "text": "Details"
+  },
+  {
+    "source": "Table-14",
+    "page": 2,
+    "section": null,
+    "text": "Name of student | Nikhil Kumar Kavuri"
+  },
+  {
+    "source": "Table-14",
+    "page": 3,
+    "section": null,
+    "text": "SHU email address | NikhilKumar.K.Kavuri@student.shu.ac.uk"
+  },
+  {
+    "source": "Table-14",
+    "page": 4,
+    "section": null,
+    "text": "Department/College | MSC BIG DATA ANALYTICS"
+  },
+  {
+    "source": "Table-14",
+    "page": 5,
+    "section": null,
+    "text": "Name of supervisor | Thompson Joshua"
+  },
+  {
+    "source": "Table-14",
+    "page": 6,
+    "section": null,
+    "text": "Supervisor’s email address | J.Thompson@shu.ac.uk"
+  },
+  {
+    "source": "Table-14",
+    "page": 7,
+    "section": null,
+    "text": "Title of proposed research | Using Artificial Intelligence to Predict Diabetes: A Comparative Analysis of Logistic Regression, Random Forest, and Artificial Neural Network Models"
+  },
+  {
+    "source": "Table-14",
+    "page": 8,
+    "section": null,
+    "text": "Proposed start date | 1st October 2025"
+  },
+  {
+    "source": "Table-14",
+    "page": 9,
+    "section": null,
+    "text": "Proposed end date | 3rd January 2026"
+  },
+  {
+    "source": "Table-14",
+    "page": 10,
+    "section": null,
+    "text": "Brief outline of research to include, rationale (reasons) for undertaking the research & aims, and methods (max 500 words). | Background This study investigates the application of Artificial Intelligence (AI) models for the early prediction of diabetes, a condition that continues to challenge global health systems due to its rising prevalence and complications. Diabetes mellitus affects over 800 million individuals worldwide, resulting in significant economic and healthcare strain (World Health Organization, 2024). Early diagnosis remains critical, yet traditional diagnostic methods such as fasting glucose or HbA1c testing are limited by accessibility and cost, particularly in low-resource environments (Jude et al., 2025). This research is motivated by the need to explore more efficient, affordable, and accurate predictive solutions through AI, leveraging machine learning (ML) algorithms capable of detecting patterns within complex datasets before clinical symptoms appear. Rationale"
+  },
+  {
+    "source": "Table-15",
+    "page": 1,
+    "section": null,
+    "text": "Details"
+  },
+  {
+    "source": "Table-15",
+    "page": 2,
+    "section": null,
+    "text": "The reason as to why this study is necessary stems from and increase in interest in healthcare solutions that are data driven. Additionally, there currently exists a gap between algorithmic potential and its application in a clinic set up. Whereas there has been considerable promise in terms of disease prediction by artificial intelligence, there still exist challenges stemming from model generalization and interpretability as well as its ethical implications (Hannah et al., 2025). In this regard, the aim of this research is to evaluate and compare three machine learning that are widely used which are Logistic Regression (LR), Random Forest (RF) and Artificial Neural Network (ANN) to make a determination of the model that offers the best optimal balance between interpretability and predictive accuracy in the diagnosis of diabetes. Logistic Regression provides transparency and simplicity; Random Forest offers robustness and feature importance; while ANN captures nonlinear relationships "
+  },
+  {
+    "source": "Table-15",
+    "page": 2,
+    "section": null,
+    "text": "though with less interpretability (El Yadari et al., 2025; Yang et al., 2025). Through this comparison, the study seeks to enhance the understanding of how AI models can contribute meaningfully to preventive healthcare. Aims This research has three aims. One of them is to preprocess and and explore a publicly available data so as to identify the pre- predictors of diabetes. The second aim is to develop and train selected AI models. The third aim is to evaluate their performance with the use of standardized classification metrics. These objectives are guided by the overarching research question: Which AI model among Logistic Regression, Random Forest, and Artificial Neural Network achieves the highest predictive performance in diabetes detection? The study also aims to reflect on the ethical and practical implications of implementing AI-driven diagnostic tools in healthcare, considering fairness, data privacy, and generalizability concerns."
+  },
+  {
+    "source": "Table-16",
+    "page": 1,
+    "section": null,
+    "text": "Details"
+  },
+  {
+    "source": "Table-16",
+    "page": 2,
+    "section": null,
+    "text": "Methods Methodologically, the study adopts a quantitative and experimental research design situated within a positivist paradigm (Creswell & Creswell, 2018). The dataset used is the Pima Indians Diabetes Database from Kaggle, consisting of 768 records and eight predictor variables, including glucose, BMI, insulin, and age (Smith et al., 1988).  Here is the link to the dataset: https://www.kaggle.com/datasets/uciml/pima-indians- diabetes-database?resource=download  License Link: https://creativecommons.org/publicdomain/zero/1.0/ The data undergoes preprocessing steps such as cleaning, mean imputation for missing values, normalization, and stratified train-test splitting to ensure balanced representation. Three AI models; Logistic Regression, Random Forest, and ANN are implemented in Python (Jupyter Notebook) using libraries such as Scikit-learn and TensorFlow. Model performance is evaluated using accuracy, precision, recall, F1-score, and Area Under the Receiver Operating Characteristic"
+  },
+  {
+    "source": "Table-16",
+    "page": 2,
+    "section": null,
+    "text": " Curve (AUC-ROC), with k-fold cross-validation applied to ensure robustness. Although the dataset is anonymized, ethical considerations concerning responsible data usage and algorithmic fairness are addressed in line with the General Data Protection Regulation. The expected outcome is a comparative insight into which AI model most effectively predicts diabetes while maintaining interpretability suitable for clinical settings. Despite possible limitations related to dataset size and demographic scope, the findings aim to contribute to ongoing discourse on AI’s integration into healthcare analytics and early disease detection systems. References Creswell, J. W., & Creswell, J. D. (2018). Research design:"
+  },
+  {
+    "source": "Table-17",
+    "page": 1,
+    "section": null,
+    "text": "Details"
+  },
+  {
+    "source": "Table-17",
+    "page": 2,
+    "section": null,
+    "text": "Qualitative, quantitative, and mixed methods approach (5th ed.). Sage Publications, Inc. El Yadari, M., Jawab, F., Moufad, I., & Arif, J. (2025). Logistics Sprawl and Urban Congestion Dynamics Toward Sustainability: A Logistic Regression and Random-Forest-Based Model. Sustainability, 17(13), 5929. https://doi.org/10.3390/su17135929 Hanna, M., Pantanowitz, L., Jackson, B., Palmer, O., Visweswaran, S., Pantanowitz, J., Deebajah, M., & Rashidi, H. (2025). Ethical and Bias Considerations in Artificial intelligence/machine Learning. Modern Pathology, 38(3), 1–13. ScienceDirect. https://doi.org/10.1016/j.modpat.2024.100686 Jude, E. B., Saluja, S., Heald, A., Widiatmoko, D., Schaper, N., & Anderson, S. G. (2025). Improving Diabetes and Pre-Diabetes Detection in the UK: Insights From HbA1c Screening in an Acute Hospital’s Emergency Department. Diabetes Therapy. https://doi.org/10.1007/s13300-025-01777-w Smith, J.W., Everhart, J.E., Dickson, W.C., Knowler, W.C., & Johannes, R.S. (1988). Using t"
+  },
+  {
+    "source": "Table-17",
+    "page": 2,
+    "section": null,
+    "text": "he ADAP learning algorithm to forecast the onset of diabetes mellitus. In Proceedings of the Symposium on Computer Applications and Medical Care (pp. 261--265). IEEE Computer Society Press. World Health Organization. (2024). Diabetes. World Health Organization. https://www.who.int/news-room/fact- sheets/detail/diabetes Yang, F., Luo, Y., Du, L., Zhang, Y., & Xie, S. (2025). Study on interpretability of artificial neural network models for dynamic load identification. Measurement, 251, 117210. https://doi.org/10.1016/j.measurement.2025.117210"
+  },
+  {
+    "source": "Table-18",
+    "page": 1,
+    "section": null,
+    "text": "Question | Yes/No"
+  },
+  {
+    "source": "Table-18",
+    "page": 2,
+    "section": null,
+    "text": "1. Will the research involve working with/within an external organisation (e.g., school, business, charity, museum, government department, international agency, etc.)? | No"
+  },
+  {
+    "source": "Table-18",
+    "page": 3,
+    "section": null,
+    "text": "2. If you answered YES to question 1, do you have granted access to conduct the research? If YES, students please show evidence to your supervisor. PI should retain safely. | _"
+  },
+  {
+    "source": "Table-18",
+    "page": 4,
+    "section": null,
+    "text": "If you answered NO to question 2, is it because: you have not yet asked you have asked and not yet received an answer you have asked and been refused access. Note: You will only be able to start the research when you have been granted access. | _"
+  },
+  {
+    "source": "Table-19",
+    "page": 1,
+    "section": null,
+    "text": "Question | Yes/No"
+  },
+  {
+    "source": "Table-19",
+    "page": 2,
+    "section": null,
+    "text": "1. Will the research involve the use of specialist copyrighted documents, films, broadcasts, photographs, artworks, designs, products, programs, databases, networks, processes, existing datasets, or secure data? | No"
+  },
+  {
+    "source": "Table-19",
+    "page": 3,
+    "section": null,
+    "text": "If you answered YES to question 1, are the materials you intend to use in the public domain? Notes: ‘In the public domain’ does not mean the same thing as ‘publicly accessible’. Information which is 'in the public domain' is no longer protected by copyright (i.e., copyright has either expired or been waived) and can be used without permission. Information which is 'publicly accessible' (e.g., TV broadcasts, websites, artworks, newspapers) is available for anyone to consult/view. It is still protected by copyright even if there is no copyright notice. In UK law, copyright protection is automatic and does not require a copyright statement, although it is always good practice to provide one. It is necessary to check the terms and conditions of use to find out exactly how the material may be reused etc. If you answered YES to question 1, be aware that you may need to consider other ethics codes. For example, when conducting Internet research, consult the code of the Association of Internet"
+  },
+  {
+    "source": "Table-19",
+    "page": 3,
+    "section": null,
+    "text": " Researchers; for educational research, consult the Code of Ethics of the British Educational Research Association. | _"
+  },
+  {
+    "source": "Table-19",
+    "page": 4,
+    "section": null,
+    "text": "3. If you answered NO to question 2, do you have explicit permission to use these materials as data? If YES, please show evidence to your supervisor. | _"
+  },
+  {
+    "source": "Table-20",
+    "page": 1,
+    "section": null,
+    "text": "Question | Yes/No"
+  },
+  {
+    "source": "Table-20",
+    "page": 2,
+    "section": null,
+    "text": "If you answered NO to question 3, is it because: you have not yet asked permission you have asked and not yet received and answer you have asked and been refused access. Note: You will only be able to start the research when you have been granted permission to use the specified material. | _"
+  },
+  {
+    "source": "Table-21",
+    "page": 1,
+    "section": null,
+    "text": "Ethics sign-off | Ethics sign-off"
+  },
+  {
+    "source": "Table-21",
+    "page": 2,
+    "section": null,
+    "text": "Personal statement | Personal statement"
+  },
+  {
+    "source": "Table-21",
+    "page": 3,
+    "section": null,
+    "text": "I can confirm that: I have read the Sheffield Hallam University Research Ethics Policy and Procedures I agree to abide by its principles. | I can confirm that: I have read the Sheffield Hallam University Research Ethics Policy and Procedures I agree to abide by its principles."
+  },
+  {
+    "source": "Table-21",
+    "page": 4,
+    "section": null,
+    "text": "Student | Student"
+  },
+  {
+    "source": "Table-21",
+    "page": 5,
+    "section": null,
+    "text": "Name: Nikhil Kumar Kavuri | Date: 06/11/2025"
+  },
+  {
+    "source": "Table-21",
+    "page": 6,
+    "section": null,
+    "text": "Signature: Nikhil Kumar Kavuri | Signature: Nikhil Kumar Kavuri"
+  },
+  {
+    "source": "Table-21",
+    "page": 7,
+    "section": null,
+    "text": "Supervisor ethical sign-off | Supervisor ethical sign-off"
+  },
+  {
+    "source": "Table-21",
+    "page": 8,
+    "section": null,
+    "text": "I can confirm that completion of this form has confirmed that this research does not involve human participants. The research will not commence until any approvals required under Sections 2 & 3 have been received and any health and safety measures are in place. | I can confirm that completion of this form has confirmed that this research does not involve human participants. The research will not commence until any approvals required under Sections 2 & 3 have been received and any health and safety measures are in place."
+  },
+  {
+    "source": "Table-21",
+    "page": 9,
+    "section": null,
+    "text": "Name: Thompson Joshua | Date: 06/11/2025"
+  },
+  {
+    "source": "Table-21",
+    "page": 10,
+    "section": null,
+    "text": "Signature: | Signature:"
+  },
+  {
+    "source": "Table-21",
+    "page": 11,
+    "section": null,
+    "text": "Independent Reviewer ethical sign off (if required to permit publication of findings with supervisor co-authorship). | Independent Reviewer ethical sign off (if required to permit publication of findings with supervisor co-authorship)."
+  },
+  {
+    "source": "Table-21",
+    "page": 12,
+    "section": null,
+    "text": "Name: | Date:"
+  },
+  {
+    "source": "Table-21",
+    "page": 13,
+    "section": null,
+    "text": "Signature: | Signature:"
+  },
+  {
+    "source": "Table-22",
+    "page": 1,
+    "section": null,
+    "text": "I …… confirm that I understand will comply with the Publication Procedure outlined in the Module Handbook and the Blackboard Site. | I …… confirm that I understand will comply with the Publication Procedure outlined in the Module Handbook and the Blackboard Site. | I …… confirm that I understand will comply with the Publication Procedure outlined in the Module Handbook and the Blackboard Site."
+  },
+  {
+    "source": "Table-22",
+    "page": 2,
+    "section": null,
+    "text": "Student: | Signature | Date"
+  },
+  {
+    "source": "Table-22",
+    "page": 3,
+    "section": null,
+    "text": "Supervisor: | Signature | Date"
+  }
+]

@@ -1,0 +1,10 @@
+Date: 4 Jan 2026
+Task: Project Setup
+Notes:
+-Git Installed
+-Python installed
+-VS Code installed
+-Folder structure created.
+Next steps:
+-Refresh Python basics
+-Learn PDF parsing
