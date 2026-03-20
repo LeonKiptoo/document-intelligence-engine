@@ -21,13 +21,6 @@ from pydantic import BaseModel
 sys.path.insert(0, str(Path(__file__).parent))
 
 import config
-from document_loader import DocumentLoader
-from chunking_engine import ChunkingEngine
-from embedding_engine import EmbeddingEngine
-from vector_store_manager import VectorStoreManager
-from retriever import Retriever
-from context_builder import ContextBuilder
-from generation_engine import GenerationEngine
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -82,6 +75,13 @@ def get_engines():
         return _engines
 
     _engines.clear()
+    from document_loader import DocumentLoader
+    from chunking_engine import ChunkingEngine
+    from embedding_engine import EmbeddingEngine
+    from vector_store_manager import VectorStoreManager
+    from retriever import Retriever
+    from context_builder import ContextBuilder
+    from generation_engine import GenerationEngine
 
     logger.info("Initialising DocIntel engines...")
 
